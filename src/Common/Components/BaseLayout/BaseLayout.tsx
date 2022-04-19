@@ -6,14 +6,14 @@ import Menu from "./Menu";
 
 const BaseLayout = () => {
     return (
-        <>
+        <BaseContainer>
             <MenuContainer>
                 <Menu />
             </MenuContainer>
             <PageContainer>
                 <Outlet />
             </PageContainer>
-        </> 
+        </BaseContainer>
     );
 };
 
