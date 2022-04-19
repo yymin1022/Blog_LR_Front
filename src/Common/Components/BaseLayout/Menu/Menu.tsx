@@ -95,7 +95,9 @@ const MenuNavItem = (props : any) => {
 
     return (
         <>
-            <Link to={snsURL} target="_sub">
+            <Link to={{
+                pathname: snsURL
+            }} target="_sub">
 
             </Link>
         </>
