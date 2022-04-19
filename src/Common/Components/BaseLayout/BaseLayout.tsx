@@ -36,6 +36,10 @@ const MenuContainer = styled.div`
     height: 100%;
     width: 350px;
 
+    left: 0;
+    top: 0;
+    position: fixed;
+
     animation-name: MenuSlide;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
