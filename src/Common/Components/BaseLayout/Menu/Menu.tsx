@@ -73,9 +73,9 @@ const MenuNav = styled.div`
     }
 `;
 
-const MenuNavItem = (props : any) => {
+const MenuNavItem = (props: any) => {
     let snsType: string = props.snsType;
-    let snsURL : string = "";
+    let snsURL: string = "";
 
     switch(snsType){
         case "facebook":
@@ -120,7 +120,7 @@ const MenuTitle = styled.div`
         color: #FFFFFF; 
         font-size: 50px;
 
-        animation-name: SideMenuTitleTextScale;
+        animation-name: MenuTitleTextScale;
         animation-duration: 2s;
         animation-timing-function: ease-in-out;
     }
