@@ -244,6 +244,8 @@ const MenuTitleTextContainer = styled.div`
     flex-direction: column;
 
     @media screen and (max-width: 1400px){
+        height: 100%;
+
         align-items: center;
         display: flex;
         flex-direction: row;
