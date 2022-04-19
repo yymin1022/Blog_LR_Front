@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -114,26 +114,26 @@ const MenuNav = styled.div`
 `;
 
 const MenuNavItem = (props: any) => {
-    let snsIcon: any;
-    let snsType: string = props.snsType;
-    let snsURL: string = "";
+    const [snsIcon, setSnsIcon] = useState<any>();
+    const [snsType, setSnsType] = useState<string>(props.snsType);
+    const [snsURL, setSnsURL] = useState<string>("");
 
     switch(snsType){
         case "facebook":
-            snsIcon = faFacebook;
-            snsURL = process.env.SNS_FB as string;
+            setSnsIcon(faFacebook);
+            setSnsURL(process.env.SNS_FB as string);
             break;
         case "github":
-            snsIcon = faGithub;
-            snsURL = process.env.SNS_GH as string;
+            setSnsIcon(faGithub);
+            setSnsURL(process.env.SNS_GH as string);
             break;
         case "googleplay":
-            snsIcon = faGooglePlay;
-            snsURL = process.env.SNS_GP as string;
+            setSnsIcon(faGooglePlay);
+            setSnsURL(process.env.SNS_GP as string);
             break;
         case "instagram":
-            snsIcon = faInstagram;
-            snsURL = process.env.SNS_IN as string;
+            setSnsIcon(faInstagram);
+            setSnsURL(process.env.SNS_IN as string);
             break;
     }
 
