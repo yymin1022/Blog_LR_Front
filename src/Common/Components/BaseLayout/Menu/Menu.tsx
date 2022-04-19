@@ -104,7 +104,87 @@ const MenuNavItem = (props : any) => {
 };
 
 const MenuTitle = styled.div`
+    width: 100%;
 
+    margin-bottom: 20px;
+    margin-left: 35px;
+    margin-right: 35px;
+
+    animation-name: MenuTitleText;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+
+    p{
+        margin: 0px;
+
+        color: #FFFFFF; 
+        font-size: 50px;
+
+        animation-name: SideMenuTitleTextScale;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes MenuTitleText{
+        0% {
+            width: 100%;
+        }
+        50% {
+            width: 100%;
+        }
+        100% {
+            width: 320px;
+        }
+    }
+
+    @keyframes MenuTitleTextScale{
+        0% {
+            font-size: 80px;
+        }
+        50% {
+            font-size: 80px;
+        }
+        100% {
+            font-size: 50px;
+        }
+    }
+
+    @media screen and (max-width: 1400px){
+        height: 100%;
+        width: 100%;
+
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+
+        p{
+            margin: 0px;
+        
+            color: #FFFFFF; 
+            font-size: 30px;
+        
+            animation-name: MenuTitleTextScaleMobile;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes MenuTitleTextScaleMobile{
+            0% {
+                font-size: 50px;
+            }
+            50% {
+                font-size: 50px;
+            }
+            100% {
+                font-size: 30px;
+            }
+        }
+    }
 `;
 
 const MenuTitleText = () => {
