@@ -10,7 +10,7 @@ import "./App.css";
 function App() {
 	return (
 		<Routes>
-			<Route element={<></>}>
+			<Route element={<BaseLayout/>}>
 				<Route path="/" element={<Home/>} 	/>
 				<Route path="/postlist/:postType" element={<PostList/>} />
 				<Route path="/postview/:posttype/:postID" element={<PostView/>} />
