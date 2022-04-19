@@ -77,6 +77,15 @@ const MenuContainer = styled.div`
 const PageContainer = styled.div`
     height: 100%;
     width: 100%;
+
+    margin-top: 150px;
+    margin-left: 350px;
+
+    @media screen and(max-width: 1400px){
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 200px;
+    }
 `;
 
 export default BaseLayout;
