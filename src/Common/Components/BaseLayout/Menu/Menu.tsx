@@ -139,9 +139,7 @@ const MenuNavItem = (props: any) => {
 
     return (
         <>
-            <Link to={{
-                pathname: snsURL
-            }} target="_sub">
+            <Link to={snsURL} target="_sub">
                 <FontAwesomeIcon icon={snsIcon} color="white" size="lg" />
             </Link>
         </>
