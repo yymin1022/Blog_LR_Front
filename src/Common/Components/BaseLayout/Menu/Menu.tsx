@@ -20,6 +20,7 @@ const Menu = () => {
 };
 
 const MenuContent = styled.div`
+    height: 100%;
     width: 100%;
 
     margin-bottom: 30px;
