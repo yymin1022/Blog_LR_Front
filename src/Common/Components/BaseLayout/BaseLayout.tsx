@@ -17,6 +17,21 @@ const BaseLayout = () => {
     );
 };
 
+const BaseContainer = styled.div`
+    height: 100%;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 1400px){
+        flex-direction: column;
+    }
+`;
+
 const MenuContainer = styled.div`
     height: 100%;
     width: 350px;
