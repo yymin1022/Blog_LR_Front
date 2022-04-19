@@ -36,9 +36,41 @@ const MenuContainer = styled.div`
     height: 100%;
     width: 350px;
 
+    animation-name: MenuSlide;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+
+    @keyframes MenuSlide{
+    0%{
+        width: 100%;
+    }
+    50%{
+        width: 100%;
+    }
+    100%{
+        width: 350px;
+    }
+}
+
     @media screen and (max-width: 1400px){
         height: 65px;
         width: 100%;
+
+        animation-name: MenuSlideMobile;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+
+        @keyframes MenuSlideMobile{
+            0%{
+                height: 100%;
+            }
+            50%{
+                height: 100%;
+            }
+            100%{
+                height: 65px;
+            }
+        }
     }
 `;
 
