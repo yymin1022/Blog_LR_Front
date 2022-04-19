@@ -50,7 +50,7 @@ const MenuNav = styled.div`
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
 
-    @keyframes SideMenuNav{
+    @keyframes MenuNav{
         0% {
             display: none;
             opacity: 0;
