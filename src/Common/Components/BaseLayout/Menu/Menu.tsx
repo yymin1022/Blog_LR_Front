@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -114,32 +114,34 @@ const MenuNav = styled.div`
 `;
 
 const MenuNavItem = (props: any) => {
-    const [snsIcon, setSnsIcon] = useState<any>();
-    const [snsType, setSnsType] = useState<string>(props.snsType);
-    const [snsURL, setSnsURL] = useState<string>("");
+    let snsIcon: any;
+    let snsType: string = props.snsType;
+    let snsURL: string = "";
 
     switch(snsType){
         case "facebook":
-            setSnsIcon(faFacebook);
-            setSnsURL(process.env.SNS_FB as string);
+            snsIcon = faFacebook;
+            snsURL = "https://www.facebook.com/profile.php?id=100007285635473";
             break;
         case "github":
-            setSnsIcon(faGithub);
-            setSnsURL(process.env.SNS_GH as string);
+            snsIcon = faGithub;
+            snsURL = "https://github.com/yymin1022";
             break;
         case "googleplay":
-            setSnsIcon(faGooglePlay);
-            setSnsURL(process.env.SNS_GP as string);
+            snsIcon = faGooglePlay;
+            snsURL = "https://play.google.com/store/apps/developer?id=Dev.+LR";
             break;
         case "instagram":
-            setSnsIcon(faInstagram);
-            setSnsURL(process.env.SNS_IN as string);
+            snsIcon = faInstagram;
+            snsURL = "https://instagram.com/useful_min";
             break;
     }
 
     return (
         <>
-            <Link to={snsURL} target="_sub">
+            <Link to={{
+                pathname: snsURL
+            }} target="_sub">
                 <FontAwesomeIcon icon={snsIcon} color="white" size="lg" />
             </Link>
         </>
