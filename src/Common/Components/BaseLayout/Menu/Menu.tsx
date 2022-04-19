@@ -27,6 +27,8 @@ const Menu = () => {
 
 const MenuContent = styled.div`
     width: 100%;
+    
+    margin-bottom: 30px;
 
     bottom: 0;
     position: absolute;
