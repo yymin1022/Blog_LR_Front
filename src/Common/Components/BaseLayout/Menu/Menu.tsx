@@ -23,6 +23,8 @@ const MenuContent = styled.div`
     height: 100%;
     width: 100%;
 
+    padding-bottom: 30px;
+
     bottom: 0;
     position: absolute;
     
