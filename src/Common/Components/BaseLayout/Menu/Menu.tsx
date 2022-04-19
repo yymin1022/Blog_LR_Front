@@ -186,10 +186,10 @@ const MenuTitle = styled.div`
 
 const MenuTitleText = () => {
     return (
-        <>
+        <Link to="/">
             <p>LR의</p>
             <p>IT블로그</p>
-        </>
+        </Link>
     );
 };
 
