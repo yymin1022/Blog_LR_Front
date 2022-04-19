@@ -18,7 +18,8 @@ const MenuContainer = styled.div`
 `;
 
 const PageContainer = styled.div`
-    
+    height: 100%;
+    width: 100%;
 `;
 
 export default BaseLayout;
