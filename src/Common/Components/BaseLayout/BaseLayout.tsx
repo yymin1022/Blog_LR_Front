@@ -27,6 +27,10 @@ const BaseContainer = styled.div`
     display: flex;
     flex-direction: row;
 
+    a{
+        text-decoration: none;
+    }
+
     @media screen and (max-width: 1400px){
         flex-direction: column;
     }
