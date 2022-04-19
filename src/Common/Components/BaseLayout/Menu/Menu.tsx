@@ -201,10 +201,6 @@ const MenuTitle = styled.div`
         margin-right: 0px;
         margin-top: 0px;
 
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-
         p{
             margin: 0px;
         
@@ -233,10 +229,19 @@ const MenuTitle = styled.div`
 const MenuTitleText = () => {
     return (
         <Link to="/">
-            <p>LR의</p>
-            <p>IT블로그</p>
+            <MenuTitleTextContainer>
+                <p>LR의</p>
+                <p>IT블로그</p>
+            </MenuTitleTextContainer>
+            
         </Link>
     );
 };
+
+const MenuTitleTextContainer = styled.div`
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+`;
 
 export default Menu;
