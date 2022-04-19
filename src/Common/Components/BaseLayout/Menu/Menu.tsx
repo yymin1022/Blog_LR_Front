@@ -14,6 +14,8 @@ const Menu = () => {
             <MenuTitle>
                 <MenuTitleText />
             </MenuTitle>
+
+            <MenuDivider />
             
             <MenuNav>
                 <MenuNavItem snsType="facebook" />
@@ -27,7 +29,7 @@ const Menu = () => {
 
 const MenuContent = styled.div`
     width: 100%;
-    
+
     margin-bottom: 30px;
 
     bottom: 0;
@@ -40,6 +42,39 @@ const MenuContent = styled.div`
         margin-bottom: 0px;
         padding-left: 20px;
         padding-right: 20px;
+    }
+`;
+
+const MenuDivider = styled.hr`
+    background-color: #FFFFFF;
+    border: 0;
+    height: 0.5px;
+    width: 310px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    animation-name: MenuDivider;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+
+    @keyframes MenuDivider{
+        0% {
+            display: none;
+            opacity: 0;
+        }
+        50% {
+            display: block;
+            opacity: 0;
+        }
+        100% {
+            display: block;
+            opacity: 1;
+        }
+    }
+
+    @media screen and (max-width: 1400px){
+        display: none;
     }
 `;
 
