@@ -2,6 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGooglePlay } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Menu = () => {
     return (
         <MenuContent>
@@ -71,20 +77,25 @@ const MenuNav = styled.div`
 `;
 
 const MenuNavItem = (props: any) => {
+    let snsIcon: any;
     let snsType: string = props.snsType;
     let snsURL: string = "";
 
     switch(snsType){
         case "facebook":
+            snsIcon = faFacebook;
             snsURL = process.env.SNS_FB as string;
             break;
         case "github":
+            snsIcon = faGithub;
             snsURL = process.env.SNS_GH as string;
             break;
         case "googleplay":
+            snsIcon = faGooglePlay;
             snsURL = process.env.SNS_GP as string;
             break;
         case "instagram":
+            snsIcon = faInstagram;
             snsURL = process.env.SNS_IN as string;
             break;
     }
@@ -94,7 +105,7 @@ const MenuNavItem = (props: any) => {
             <Link to={{
                 pathname: snsURL
             }} target="_sub">
-
+                <FontAwesomeIcon icon={snsIcon} color="white" size="lg" />
             </Link>
         </>
     );
