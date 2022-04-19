@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+import BaseLayout from "./Common/Components/BaseLayout";
 import Home from "./Pages/Home";
 import PostList from "./Pages/PostList";
 import PostView from "./Pages/PostView";
