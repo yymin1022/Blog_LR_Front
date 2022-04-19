@@ -2,10 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { Outlet } from "react-router-dom";
 
+import Menu from "./Menu";
+
 const BaseLayout = () => {
     return (
         <>
-            <MenuContainer />
+            <MenuContainer>
+                <Menu />
+            </MenuContainer>
             <PageContainer>
                 <Outlet />
             </PageContainer>
