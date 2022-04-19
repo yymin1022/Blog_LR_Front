@@ -14,7 +14,13 @@ const BaseLayout = () => {
 };
 
 const MenuContainer = styled.div`
+    height: 100%;
+    width: 350px;
 
+    @media screen and (max-width: 1400px){
+        height: 65px;
+        width: 100%;
+    }
 `;
 
 const PageContainer = styled.div`
