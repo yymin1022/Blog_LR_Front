@@ -20,13 +20,10 @@ const Menu = () => {
 };
 
 const MenuContent = styled.div`
-    height: 100%;
     width: 100%;
 
     bottom: 0;
     position: absolute;
-    
-    background-color: #164EAB;
 
     @media screen and (max-width: 1400px){
         height: 100%;

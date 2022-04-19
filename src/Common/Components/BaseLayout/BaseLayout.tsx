@@ -39,6 +39,8 @@ const MenuContainer = styled.div`
     left: 0;
     top: 0;
     position: fixed;
+    
+    background-color: #164EAB;
 
     animation-name: MenuSlide;
     animation-duration: 2s;
