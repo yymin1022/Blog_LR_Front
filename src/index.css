@@ -12,33 +12,33 @@ code {
 @font-face {
     font-family: 'NanumSquare';
     font-weight: 400;
-    src: url("./Font/NanumSquareR.eot");
-    src: url("./Font/NanumSquareR.eot?#iefix") format('embedded-opentype'),
-         url("./Font/NanumSquareR.woff") format('woff'),
-         url("./Font/NanumSquareR.ttf") format('truetype');
+    src: url("./Resources/Font/NanumSquareR.eot");
+    src: url("./Resources/Font/NanumSquareR.eot?#iefix") format('embedded-opentype'),
+         url("./Resources/Font/NanumSquareR.woff") format('woff'),
+         url("./Resources/Font/NanumSquareR.ttf") format('truetype');
 }
 
 @font-face {
     font-family: 'NanumSquare';
     font-weight: 700;
-    src: url("./Font/NanumSquareB.eot");
-    src: url("./Font/NanumSquareB.eot?#iefix") format('embedded-opentype'),
-         url("./Font/NanumSquareB.woff") format('woff'),
-         url("./Font/NanumSquareB.ttf") format('truetype');
+    src: url("./Resources/Font/NanumSquareB.eot");
+    src: url("./Resources/Font/NanumSquareB.eot?#iefix") format('embedded-opentype'),
+         url("./Resources/Font/NanumSquareB.woff") format('woff'),
+         url("./Resources/Font/NanumSquareB.ttf") format('truetype');
 }
 @font-face {
     font-family: 'NanumSquare';
     font-weight: 800;
-    src: url("./Font/NanumSquareEB.eot");
-    src: url("./Font/NanumSquareEB.eot?#iefix") format('embedded-opentype'),
-         url("./Font/NanumSquareEB.woff") format('woff'),
-         url("./Font/NanumSquareEB.ttf") format('truetype');
+    src: url("./Resources/Font/NanumSquareEB.eot");
+    src: url("./Resources/Font/NanumSquareEB.eot?#iefix") format('embedded-opentype'),
+         url("./Resources/Font/NanumSquareEB.woff") format('woff'),
+         url("./Resources/Font/NanumSquareEB.ttf") format('truetype');
 }
 @font-face {
     font-family: 'NanumSquare';
     font-weight: 300;
-    src: url("./Font/NanumSquareL.eot");
-    src: url("./Font/NanumSquareL.eot?#iefix") format('embedded-opentype'),
-         url("./Font/NanumSquareL.woff") format('woff'),
-         url("./Font/NanumSquareL.ttf") format('truetype');
+    src: url("./Resources/Font/NanumSquareL.eot");
+    src: url("./Resources/Font/NanumSquareL.eot?#iefix") format('embedded-opentype'),
+         url("./Resources/Font/NanumSquareL.woff") format('woff'),
+         url("./Resources/Font/NanumSquareL.ttf") format('truetype');
 }
