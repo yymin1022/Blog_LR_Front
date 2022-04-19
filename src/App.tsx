@@ -7,11 +7,11 @@ import PostList from "./Pages/PostList";
 import PostView from "./Pages/PostView";
 import "./App.css";
 
-function App() {
+const App = () => {
 	return (
 		<Routes>
 			<Route element={<BaseLayout/>}>
-				<Route path="/" element={<Home/>} 	/>
+				<Route path="/" element={<Home/>} />
 				<Route path="/postlist/:postType" element={<PostList/>} />
 				<Route path="/postview/:posttype/:postID" element={<PostView/>} />
 			</Route>
