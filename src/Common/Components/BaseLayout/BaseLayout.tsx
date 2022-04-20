@@ -91,7 +91,7 @@ const PageContainer = styled.div`
     margin-top: 150px;
     margin-left: 350px;
 
-    @media screen and(max-width: 1400px){
+    @media screen and (max-width: 1400px){
         margin-left: 10px;
         margin-right: 10px;
         margin-top: 200px;
