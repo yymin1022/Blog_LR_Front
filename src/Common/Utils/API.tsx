@@ -3,10 +3,10 @@ import axios from "axios";
 const API_URL_BASE : string = process.env.apiURL as string;
 
 const apiRequest = (apiURL : string, apiReqData : object) => {
-    let apiResult : object = sendRequest(apiURL, apiReqData);
-    let apiResultCode = apiResult["RESULT_CODE"];
-    let apiResultData = apiResult["RESULT_DATA"];
-    let apiResultMsg = apiResult["RESULT_MSG"];
+    let apiResult : any = sendRequest(apiURL, apiReqData);
+    let apiResultCode : number = apiResult["RESULT_CODE"];
+    let apiResultData : object = apiResult["RESULT_DATA"];
+    let apiResultMsg : string = apiResult["RESULT_MSG"];
 
     if(apiResultCode == 200){
         return(apiResultData);
