@@ -5,9 +5,9 @@ const Home = () => {
     return (
         <HomeContainer>
             <HomeTitleContainer>
-                <HomeTitleText>안녕하세요</HomeTitleText>
-                <HomeTitleText color="blue">대학생 1인 개발자</HomeTitleText>
-                <HomeTitleText>LR입니다</HomeTitleText>
+                <HomeTitleText primary={false}>안녕하세요</HomeTitleText>
+                <HomeTitleText primary={true}>대학생 1인 개발자</HomeTitleText>
+                <HomeTitleText primary={false}>LR입니다</HomeTitleText>
             </HomeTitleContainer>
         </HomeContainer>
     );
@@ -21,12 +21,12 @@ const HomeTitleContainer = styled.div`
     margin: 10px;
 `;
 
-const HomeTitleText = styled.p`
+const HomeTitleText = styled.p<{primary : boolean}>`
     font-size: 80px;
     margin: 0px;
 
     ${(props) =>
-        props.color == "blue" &&
+        props.primary &&
         css`
             color: #164EAB;
             font-weight: bold;
