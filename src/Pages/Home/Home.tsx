@@ -92,7 +92,7 @@ const HomeTitleContainer = styled.div`
 
     @media screen and (max-width: 1400px){
         font-size: 40px;
-        margin: 0px;
+        margin: 10px;
     }
 `;
 
