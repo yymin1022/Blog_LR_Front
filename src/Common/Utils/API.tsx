@@ -8,11 +8,11 @@ const apiRequest = (apiURL : string, apiReqData : object) => {
     let apiResultData : object = apiResult["RESULT_DATA"];
     let apiResultMsg : string = apiResult["RESULT_MSG"];
 
-    if(apiResultCode == 200){
-        return(apiResultData);
-    }else{
+    if(apiResultCode != 200){
         console.log(apiResultMsg);
     }
+
+    return(apiResultData);
 };
 
 const sendRequest = (url : string, data : object) => {
@@ -25,7 +25,7 @@ const sendRequest = (url : string, data : object) => {
     .catch((error) => {
         resultData = {
             RESULT_CODE: 100,
-            RESULT_MSG: error
+            RESULT_MSG: error as string
         };
     });
 
