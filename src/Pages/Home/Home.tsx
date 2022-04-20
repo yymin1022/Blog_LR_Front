@@ -40,7 +40,7 @@ const HomeNavContainer = styled.div`
     margin: 10px;
 
     p{
-        height: 45px;
+        margin: 10px;
 
         font-family: "NanumSquare";
         font-size: 20px;
