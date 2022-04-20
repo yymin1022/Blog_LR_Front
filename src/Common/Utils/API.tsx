@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL_BASE : string = process.env.apiURL;
+const API_URL_BASE : string = process.env.apiURL as string;
 
 const apiRequest = (apiURL : string, apiReqData : object) => {
     apiRequest(apiURL, apiReqData);
