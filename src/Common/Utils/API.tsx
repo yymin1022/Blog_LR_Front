@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_URL_BASE : string = process.env.API_URL;
 
-const API_REQUEST = (url : string, data : object) => {
+const sendRequest = (url : string, data : object) => {
     let resultData : object = {};
 
     axios.post(url, data)
@@ -26,7 +26,7 @@ export const getPostData = (postID : string, postType : string) => {
         postType: postType
     };
 
-    let apiResult : object = API_REQUEST(API_URL, apiReqData);
+    let apiResult : object = sendRequest(API_URL, apiReqData);
     let apiResultCode : number = apiResult["RESULT_CODE"];
     let apiResultData : object = apiResult["RESULT_DATA"];
     let apiResultMsg : string = apiResult["RESULT_MSG"];
@@ -46,7 +46,7 @@ export const getPostImage = (postID : string, postType : string, srcID : string)
         srcID: srcID
     };
 
-    let apiResult : object = API_REQUEST(API_URL, apiReqData);
+    let apiResult : object = sendRequest(API_URL, apiReqData);
     let apiResultCode : number = apiResult["RESULT_CODE"];
     let apiResultData : object = apiResult["RESULT_DATA"];
     let apiResultMsg : string = apiResult["RESULT_MSG"];
@@ -64,7 +64,7 @@ export const getPostList = (postType : string) => {
         postType: postType
     };
 
-    let apiResult : object = API_REQUEST(API_URL, apiReqData);
+    let apiResult : object = sendRequest(API_URL, apiReqData);
     let apiResultCode : number = apiResult["RESULT_CODE"];
     let apiResultData : object = apiResult["RESULT_DATA"];
     let apiResultMsg : string = apiResult["RESULT_MSG"];
