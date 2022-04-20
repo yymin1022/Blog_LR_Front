@@ -11,7 +11,8 @@ const API_REQUEST = (url : string, data : object) => {
     })
     .catch((error) => {
         resultData = {
-            RESULT_MSG: error as string
+            RESULT_CODE: 100,
+            RESULT_MSG: error
         };
     });
 
@@ -27,5 +28,15 @@ export const getPostImage = () => {
 };
 
 export const getPostList = (postType : string) => {
-    return {getPostList: true};
+    let API_URL : string = `${API_URL_BASE}/getPostList`;
+    let API_DATA : object = {
+        postType: postType
+    };
+
+    let API_RESULT : object = API_REQUEST(API_URL, API_DATA);
+    if(API_RESULT["RESULT_CODE"] == 200){
+        return(API_RESULT["RESULT_DATA"]);
+    }else{
+        console.log(API_RESULT["RESULT_MSG"]);
+    }
 };
