@@ -38,8 +38,24 @@ export const getPostData = (postID : string, postType : string) => {
     }
 };
 
-export const getPostImage = () => {
-    return {getPostImage: true};
+export const getPostImage = (postID : string, postType : string, srcID : string) => {
+    let API_URL : string = `${API_URL_BASE}/getPostImage`;
+    let apiReqData : object = {
+        postID: postID,
+        postType: postType,
+        srcID: srcID
+    };
+
+    let apiResult : object = API_REQUEST(API_URL, apiReqData);
+    let apiResultCode : number = apiResult["RESULT_CODE"];
+    let apiResultData : object = apiResult["RESULT_DATA"];
+    let apiResultMsg : string = apiResult["RESULT_MSG"];
+
+    if(apiResultCode == 200){
+        return(apiResultData["ImageData"]);
+    }else{
+        console.log(apiResultMsg);
+    }
 };
 
 export const getPostList = (postType : string) => {
