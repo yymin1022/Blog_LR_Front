@@ -3,7 +3,16 @@ import axios from "axios";
 const API_URL_BASE : string = process.env.apiURL as string;
 
 const apiRequest = (apiURL : string, apiReqData : object) => {
-    apiRequest(apiURL, apiReqData);
+    let apiResult : object = sendRequest(apiURL, apiReqData);
+    let apiResultCode : number = apiResult["RESULT_CODE"];
+    let apiResultData : object = apiResult["RESULT_DATA"];
+    let apiResultMsg : string = apiResult["RESULT_MSG"];
+
+    if(apiResultCode == 200){
+        return(apiResultData);
+    }else{
+        console.log(apiResultMsg);
+    }
 };
 
 const sendRequest = (url : string, data : object) => {
@@ -30,7 +39,8 @@ export const getPostData = (postID : string, postType : string) => {
         postType: postType
     };
 
-    return apiRequest(apiURL, apiReqData);
+    let apiResult : object = apiRequest(apiURL, apiReqData);
+    return apiResult;
 };
 
 export const getPostImage = (postID : string, postType : string, srcID : string) => {
@@ -41,7 +51,8 @@ export const getPostImage = (postID : string, postType : string, srcID : string)
         srcID: srcID
     };
 
-    return apiRequest(apiURL, apiReqData)["ImageData"];
+    let apiResult : object = apiRequest(apiURL, apiReqData);
+    return apiResult["ImageData"];
 };
 
 export const getPostList = (postType : string) => {
@@ -50,5 +61,6 @@ export const getPostList = (postType : string) => {
         postType: postType
     };
 
-    return apiRequest(apiURL, apiReqData);
+    let apiResult : object = apiRequest(apiURL, apiReqData);
+    return apiResult;
 };
