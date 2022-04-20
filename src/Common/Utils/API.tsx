@@ -19,8 +19,23 @@ const API_REQUEST = (url : string, data : object) => {
     return resultData;
 }
 
-export const getPostData = () => {
-    return {getPostData: true};
+export const getPostData = (postID : string, postType : string) => {
+    let API_URL : string = `${API_URL_BASE}/getPostData`;
+    let apiReqData : object = {
+        postID: postID,
+        postType: postType
+    };
+
+    let apiResult : object = API_REQUEST(API_URL, apiReqData);
+    let apiResultCode : number = apiResult["RESULT_CODE"];
+    let apiResultData : object = apiResult["RESULT_DATA"];
+    let apiResultMsg : string = apiResult["RESULT_MSG"];
+
+    if(apiResultCode == 200){
+        return(apiResultData);
+    }else{
+        console.log(apiResultMsg);
+    }
 };
 
 export const getPostImage = () => {
