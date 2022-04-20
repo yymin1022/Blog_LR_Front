@@ -38,6 +38,10 @@ const HomeNavContainer = styled.div`
     flex-direction: column;
 
     margin: 10px;
+    
+    a{
+        text-decoration: none;
+    }
 
     p{
         margin: 10px;
