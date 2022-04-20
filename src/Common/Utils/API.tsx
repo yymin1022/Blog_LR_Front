@@ -4,9 +4,9 @@ const API_URL_BASE : string = process.env.apiURL as string;
 
 const apiRequest = (apiURL : string, apiReqData : object) => {
     let apiResult : any = sendRequest(apiURL, apiReqData);
-    let apiResultCode : number = apiResult["RESULT_CODE"];
-    let apiResultData : object = apiResult["RESULT_DATA"];
-    let apiResultMsg : string = apiResult["RESULT_MSG"];
+    let apiResultCode : number = apiResult["RESULT_CODE"] as number;
+    let apiResultData : object = apiResult["RESULT_DATA"] as object;
+    let apiResultMsg : string = apiResult["RESULT_MSG"] as string;
 
     if(apiResultCode != 200){
         console.log(apiResultMsg);
