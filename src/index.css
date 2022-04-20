@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    overflow-x: hidden;
+    
     font-family: "NanumSquare";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
