@@ -16,7 +16,7 @@ const apiRequest = (apiURL : string, apiReqData : object) => {
 };
 
 const sendRequest = (url : string, data : object) => {
-    let resultData : object;
+    let resultData : object = {};
 
     axios.post(url, data)
     .then((response) => {
