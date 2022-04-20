@@ -45,7 +45,6 @@ const HomeNavContainer = styled.div`
         margin: 10px;
 
         color: black;
-        font-family: "NanumSquare";
         font-size: 20px;
         font-weight: 700;
     }
