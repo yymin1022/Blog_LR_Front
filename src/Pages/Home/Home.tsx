@@ -38,14 +38,11 @@ const HomeNavContainer = styled.div`
     flex-direction: column;
 
     margin: 10px;
-    
-    a{
-        text-decoration: none;
-    }
 
     p{
         margin: 10px;
 
+        color: black;
         font-family: "NanumSquare";
         font-size: 20px;
         font-weight: 700;
