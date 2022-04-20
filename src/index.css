@@ -11,6 +11,10 @@ code {
     font-family: Consolas;
 }
 
+p, span {
+    font-family: "NanumSquare";
+}
+
 @font-face {
     font-family: 'NanumSquare';
     font-weight: 400;
