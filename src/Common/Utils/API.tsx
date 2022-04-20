@@ -41,7 +41,7 @@ export const getPostImage = (postID : string, postType : string, srcID : string)
         srcID: srcID
     };
 
-    return apiRequest(apiURL, apiReqData);
+    return apiRequest(apiURL, apiReqData)["ImageData"];
 };
 
 export const getPostList = (postType : string) => {
