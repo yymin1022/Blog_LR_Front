@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const API_URL_BASE : string = process.env.API_URL;
+const API_URL_BASE : string = process.env.apiURL;
+
+const apiRequest = (apiURL : string, apiReqData : object) => {
+    apiRequest(apiURL, apiReqData);
+};
 
 const sendRequest = (url : string, data : object) => {
     let resultData : object = {};
@@ -20,58 +24,31 @@ const sendRequest = (url : string, data : object) => {
 }
 
 export const getPostData = (postID : string, postType : string) => {
-    let API_URL : string = `${API_URL_BASE}/getPostData`;
+    let apiURL : string = `${API_URL_BASE}/getPostData`;
     let apiReqData : object = {
         postID: postID,
         postType: postType
     };
 
-    let apiResult : object = sendRequest(API_URL, apiReqData);
-    let apiResultCode : number = apiResult["RESULT_CODE"];
-    let apiResultData : object = apiResult["RESULT_DATA"];
-    let apiResultMsg : string = apiResult["RESULT_MSG"];
-
-    if(apiResultCode == 200){
-        return(apiResultData);
-    }else{
-        console.log(apiResultMsg);
-    }
+    return apiRequest(apiURL, apiReqData);
 };
 
 export const getPostImage = (postID : string, postType : string, srcID : string) => {
-    let API_URL : string = `${API_URL_BASE}/getPostImage`;
+    let apiURL : string = `${API_URL_BASE}/getPostImage`;
     let apiReqData : object = {
         postID: postID,
         postType: postType,
         srcID: srcID
     };
 
-    let apiResult : object = sendRequest(API_URL, apiReqData);
-    let apiResultCode : number = apiResult["RESULT_CODE"];
-    let apiResultData : object = apiResult["RESULT_DATA"];
-    let apiResultMsg : string = apiResult["RESULT_MSG"];
-
-    if(apiResultCode == 200){
-        return(apiResultData["ImageData"]);
-    }else{
-        console.log(apiResultMsg);
-    }
+    return apiRequest(apiURL, apiReqData)["ImageData"];
 };
 
 export const getPostList = (postType : string) => {
-    let API_URL : string = `${API_URL_BASE}/getPostList`;
+    let apiURL : string = `${API_URL_BASE}/getPostList`;
     let apiReqData : object = {
         postType: postType
     };
 
-    let apiResult : object = sendRequest(API_URL, apiReqData);
-    let apiResultCode : number = apiResult["RESULT_CODE"];
-    let apiResultData : object = apiResult["RESULT_DATA"];
-    let apiResultMsg : string = apiResult["RESULT_MSG"];
-
-    if(apiResultCode == 200){
-        return(apiResultData);
-    }else{
-        console.log(apiResultMsg);
-    }
+    return apiRequest(apiURL, apiReqData);
 };
