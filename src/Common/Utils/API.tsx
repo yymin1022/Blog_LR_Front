@@ -29,14 +29,18 @@ export const getPostImage = () => {
 
 export const getPostList = (postType : string) => {
     let API_URL : string = `${API_URL_BASE}/getPostList`;
-    let API_DATA : object = {
+    let apiReqData : object = {
         postType: postType
     };
 
-    let API_RESULT : object = API_REQUEST(API_URL, API_DATA);
-    if(API_RESULT["RESULT_CODE"] == 200){
-        return(API_RESULT["RESULT_DATA"]);
+    let apiResult : object = API_REQUEST(API_URL, apiReqData);
+    let apiResultCode : number = apiResult["RESULT_CODE"];
+    let apiResultData : object = apiResult["RESULT_DATA"];
+    let apiResultMsg : string = apiResult["RESULT_MSG"];
+
+    if(apiResultCode == 200){
+        return(apiResultData);
     }else{
-        console.log(API_RESULT["RESULT_MSG"]);
+        console.log(apiResultMsg);
     }
 };
