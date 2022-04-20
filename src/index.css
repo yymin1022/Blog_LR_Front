@@ -1,13 +1,44 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: "NanumSquare";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: Consolas;
+}
+
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 400;
+    src: url("./Resources/Font/NanumSquareR.eot");
+    src: url("./Resources/Font/NanumSquareR.eot?#iefix") format('embedded-opentype'),
+         url("./Resources/Font/NanumSquareR.woff") format('woff'),
+         url("./Resources/Font/NanumSquareR.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 700;
+    src: url("./Resources/Font/NanumSquareB.eot");
+    src: url("./Resources/Font/NanumSquareB.eot?#iefix") format('embedded-opentype'),
+         url("./Resources/Font/NanumSquareB.woff") format('woff'),
+         url("./Resources/Font/NanumSquareB.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 800;
+    src: url("./Resources/Font/NanumSquareEB.eot");
+    src: url("./Resources/Font/NanumSquareEB.eot?#iefix") format('embedded-opentype'),
+         url("./Resources/Font/NanumSquareEB.woff") format('woff'),
+         url("./Resources/Font/NanumSquareEB.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 300;
+    src: url("./Resources/Font/NanumSquareL.eot");
+    src: url("./Resources/Font/NanumSquareL.eot?#iefix") format('embedded-opentype'),
+         url("./Resources/Font/NanumSquareL.woff") format('woff'),
+         url("./Resources/Font/NanumSquareL.ttf") format('truetype');
 }
