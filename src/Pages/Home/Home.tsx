@@ -91,7 +91,6 @@ const HomeTitleContainer = styled.div`
     margin: 10px;
 
     @media screen and (max-width: 1400px){
-        font-size: 40px;
         margin: 10px;
     }
 `;
@@ -106,6 +105,10 @@ const HomeTitleText = styled.p<{accent : boolean}>`
             color: #164EAB;
             font-weight: bold;
         `
+    }
+
+    @media screen and (max-width: 1400px){
+        font-size: 40px;
     }
 `;
 
