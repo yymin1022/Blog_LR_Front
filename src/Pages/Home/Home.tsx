@@ -18,6 +18,10 @@ const Home = () => {
 
 const HomeContainer = styled.div`
     margin-left: 100px;
+
+    @media screen and (max-width: 1400px){
+        margin: 0px;
+    }
 `;
 
 const HomeNav = () => {
@@ -85,6 +89,11 @@ const HomeTitle = () => {
 
 const HomeTitleContainer = styled.div`
     margin: 10px;
+
+    @media screen and (max-width: 1400px){
+        font-size: 40px;
+        margin: 0px;
+    }
 `;
 
 const HomeTitleText = styled.p<{accent : boolean}>`
