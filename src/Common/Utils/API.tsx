@@ -62,6 +62,9 @@ export const getPostList = (postType : string) => {
         postType: postType
     };
 
+    console.log(apiURL);
+    console.log(apiReqData);
+
     let apiResult : object = apiRequest(apiURL, apiReqData);
     return apiResult;
 };
