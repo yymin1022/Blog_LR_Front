@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL_BASE : string = (process.env.API_URL as string);
+const API_URL_BASE : string = process.env.REACT_APP_API_URL as string;
 
 const apiRequest = (apiURL : string, apiReqData : object) => {
     let apiResult : any = sendRequest(apiURL, apiReqData);
