@@ -9,6 +9,7 @@ const apiRequest = (apiURL : string, apiReqData : object) => {
     let apiResultMsg : string = apiResult["RESULT_MSG"] as string;
 
     if(apiResultCode != 200){
+        console.log(apiResult);
         console.log(apiResultMsg);
     }
 
