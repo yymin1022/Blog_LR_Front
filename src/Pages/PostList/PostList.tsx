@@ -12,7 +12,7 @@ const PostList = () => {
         API.getPostList(postType as string).then((apiResult : any) => {
             console.log(apiResult["postList"]);
             setPostCount(apiResult["postCount"]);
-            setPostList(apiResult.["postList"]);
+            setPostList(apiResult["postList"]);
         });
     }, []);
 
