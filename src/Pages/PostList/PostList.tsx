@@ -18,9 +18,9 @@ const PostList = () => {
     return (
         <div>
             {
-                postList.map(item => {
+                postList.map((item : any) => {
                     return(
-                        <p>postTitle</p>
+                        <p>{item["postTitle"]}</p>
                     )
                 })
             }
