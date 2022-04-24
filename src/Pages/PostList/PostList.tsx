@@ -11,11 +11,15 @@ const PostList = () => {
         API.getPostList(postType as string).then((postList : any) => {
             setPostListData(postList);
         });
+
+        return(
+            console.log(postListData)
+        );
     }, []);
 
     return (
         <div>
-            {postListData}
+            PostList
         </div>
     );
 };
