@@ -5,22 +5,21 @@ import * as API from "../../Common/Utils/API";
 
 const PostList = () => {
     const {postType} = useParams<{postType : string}>();
-    const [postListData, setPostListData] = useState<any>({
-        postCount: 0,
-        postList: []
-    } as object);
+    const [postCount, setPostCount] = useState<number>(0);
+    const [postList, setPostList] = useState<Array<object>>([]);
 
     useEffect(() => {
-        API.getPostList(postType as string).then((postList : any) => {
-            console.log(postList);
-            setPostListData(postList as object);
+        API.getPostList(postType as string).then((apiResult : any) => {
+            console.log(apiResult);
+            setPostCount(apiResult.postCount);
+            setPostList(apiResult.postList);
         });
     }, []);
 
     return (
         <div>
             {
-                postListData.postList
+                postCount
             }
         </div>
     );
