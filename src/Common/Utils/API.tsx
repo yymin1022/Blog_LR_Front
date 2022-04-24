@@ -4,9 +4,11 @@ const API_URL_BASE : string = process.env.REACT_APP_API_URL as string;
 
 const apiRequest = (apiURL : string, apiReqData : object) => {
     let apiResult : any = sendRequest(apiURL, apiReqData);
-    let apiResultCode : number = apiResult["RESULT_CODE"] as number;
-    let apiResultData : object = apiResult["RESULT_DATA"] as object;
-    let apiResultMsg : string = apiResult["RESULT_MSG"] as string;
+    console.log(apiResult);
+    
+    let apiResultCode = apiResult["RESULT_CODE"];
+    let apiResultData = apiResult["RESULT_DATA"];
+    let apiResultMsg = apiResult["RESULT_MSG"];
 
     if(apiResultCode != 200){
         console.log(apiResult);
@@ -60,9 +62,6 @@ export const getPostList = (postType : string) => {
     let apiReqData : object = {
         postType: postType
     };
-
-    console.log(apiURL);
-    console.log(apiReqData);
 
     let apiResult : object = apiRequest(apiURL, apiReqData);
     return apiResult;
