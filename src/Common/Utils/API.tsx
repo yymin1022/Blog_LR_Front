@@ -5,8 +5,6 @@ const API_URL_BASE : string = process.env.REACT_APP_API_URL as string;
 const apiRequest = (apiURL : string, apiReqData : object) => {
     return new Promise((resolve) => {
         sendRequest(apiURL, apiReqData).then((apiResult : any) => {
-            console.log(apiResult);
-            
             let apiResultCode = apiResult["RESULT_CODE"];
             let apiResultData = apiResult["RESULT_DATA"];
             let apiResultMsg = apiResult["RESULT_MSG"];
