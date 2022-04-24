@@ -8,7 +8,10 @@ const PostList = () => {
     const [postListData, setPostListData] = useState<any>({});
 
     useEffect(() => {
-        setPostListData(API.getPostList(postType as string));
+        API.getPostList(postType as string).then((postList : any) => {
+            setPostListData(postList);
+        });
+        
         console.log(postListData);
     }, []);
 
