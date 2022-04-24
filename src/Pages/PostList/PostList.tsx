@@ -18,7 +18,11 @@ const PostList = () => {
     return (
         <div>
             {
-                postCount
+                postList.map(item => {
+                    return(
+                        <p>postTitle</p>
+                    )
+                })
             }
         </div>
     );
