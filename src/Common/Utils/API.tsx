@@ -23,19 +23,16 @@ const apiRequest = (apiURL : string, apiReqData : object) => {
 
 const sendRequest = (url : string, data : object) => {
     return new Promise((resolve) => {
-        let resultData = {};
         axios.post(url, data)
         .then((response) => {
-            resultData = response.data;
+            resolve(response.data);
         })
         .catch((error) => {
-            resultData = {
+            resolve({
                 RESULT_CODE: 100,
                 RESULT_MSG: error as string
-            };
+            });
         });
-
-        resolve(resultData);
     });
 }
 
