@@ -20,11 +20,7 @@ const PostList = () => {
     return (
         <div>
             {
-                postListData.postList.map((item : any) => {
-                    return(
-                        <p>item.postTitle</p>
-                    )
-                })
+                postListData.postList
             }
         </div>
     );
