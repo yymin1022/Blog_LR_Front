@@ -21,6 +21,7 @@ const sendRequest = (url : string, data : object) => {
 
     axios.post(url, data)
     .then((response) => {
+        console.log(response);
         resultData = response.data;
     })
     .catch((error) => {
