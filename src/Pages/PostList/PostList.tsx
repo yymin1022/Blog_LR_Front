@@ -5,12 +5,12 @@ import * as API from "../../Common/Utils/API";
 
 const PostList = () => {
     const {postType} = useParams<{postType : string}>();
-    const [postListData, setPostListData] = useState<any>({});
+    const [postListData, setPostListData] = useState<any>({} as object);
 
     useEffect(() => {
         API.getPostList(postType as string).then((postList : any) => {
             console.log(postList);
-            setPostListData(postList);
+            setPostListData(postList as object);
         });
     }, []);
 
