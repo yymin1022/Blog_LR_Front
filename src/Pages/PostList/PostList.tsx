@@ -16,11 +16,7 @@ const PostList = () => {
 
     return (
         <div>
-            {
-                postListData.map((item : any) => {
-                    return(item.postTitle);
-                })
-            }
+            PostList
         </div>
     );
 };
