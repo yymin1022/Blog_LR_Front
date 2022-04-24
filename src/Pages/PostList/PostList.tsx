@@ -9,12 +9,9 @@ const PostList = () => {
 
     useEffect(() => {
         API.getPostList(postType as string).then((postList : any) => {
+            console.log(postList);
             setPostListData(postList);
         });
-
-        return(
-            console.log(postListData)
-        );
     }, []);
 
     return (
