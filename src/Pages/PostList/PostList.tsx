@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 import * as API from "../../Common/Utils/API";
 
 const PostList = () => {
-    const postType : string = useParams<{postType : string}>() as string;
+    const { postType } = useParams<{postType : string}>();
     console.log(postType);
     
-    const postListData = API.getPostList(postType);
+    const postListData = API.getPostList(postType as string);
     console.log(postListData);
 
     return (
