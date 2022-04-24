@@ -10,14 +10,12 @@ const PostList = () => {
     useEffect(() => {
         API.getPostList(postType as string).then((postList : any) => {
             setPostListData(postList);
-        
-            console.log(postListData);
         });
     }, []);
 
     return (
         <div>
-            PostList
+            {postListData}
         </div>
     );
 };
