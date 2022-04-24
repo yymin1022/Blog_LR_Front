@@ -50,7 +50,7 @@ export const getPostData = (postID : string, postType : string) => {
         postType: postType
     };
 
-    let apiResult = apiRequest(apiURL, apiReqData);
+    let apiResult : any = apiRequest(apiURL, apiReqData);
     return apiResult;
 };
 
@@ -72,6 +72,6 @@ export const getPostList = (postType : string) => {
         postType: postType
     };
 
-    let apiResult = apiRequest(apiURL, apiReqData);
+    let apiResult : any = apiRequest(apiURL, apiReqData);
     return apiResult;
 };
