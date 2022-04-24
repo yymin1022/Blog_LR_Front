@@ -7,12 +7,10 @@ const PostList = () => {
     const {postType} = useParams<{postType : string}>();
     const [postListData, setPostListData] = useState<any>({});
 
-    let postList = API.getPostList(postType as string);
-
     useEffect(() => {
-        setPostListData(postList);
+        setPostListData(API.getPostList(postType as string));
         console.log(postListData);
-    }, [postList]);
+    }, []);
 
     return (
         <div>
