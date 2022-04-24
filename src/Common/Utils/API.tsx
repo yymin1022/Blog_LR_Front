@@ -17,21 +17,19 @@ const apiRequest = (apiURL : string, apiReqData : object) => {
 };
 
 const sendRequest = (url : string, data : object) => {
-    let resultData : object = {};
-
     axios.post(url, data)
     .then((response) => {
         console.log(response);
-        resultData = response.data;
+        return response.data;
     })
     .catch((error) => {
-        resultData = {
+        let resultData = {
             RESULT_CODE: 100,
             RESULT_MSG: error as string
         };
-    });
 
-    return resultData;
+        return resultData;
+    });
 }
 
 export const getPostData = (postID : string, postType : string) => {
