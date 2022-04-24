@@ -10,7 +10,7 @@ const PostList = () => {
 
     useEffect(() => {
         API.getPostList(postType as string).then((apiResult : any) => {
-            console.log(apiResult);
+            console.log(apiResult.postList);
             setPostCount(apiResult.postCount);
             setPostList(apiResult.postList);
         });
