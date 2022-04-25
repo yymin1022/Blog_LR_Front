@@ -19,23 +19,36 @@ const PostList = () => {
 
     return (
         <PostListContainer>
-            {
-                postList.map((item : any) => {
-                    return(
-                        <PostListItem
-                            postDate={item.postDate}
-                            postID={item.postID}
-                            postIsPinned={item.postIsPinned}
-                            postTag={item.postTag}
-                            postTitle={item.postTitle}
-                            postType={postType}
-                            postURL={item.postURL} />
-                    )
-                })
-            }
+            <NormalPostListContainer postList={postList} postType={postType} />
         </PostListContainer>
     );
 };
+
+const NormalPostListContainer = (props : any) => {
+    const postList = props.postList;
+    const postType = props.postType;
+
+    return (
+        <>{
+            postList.map((item : any) => {
+                return(
+                    <PostListItem
+                        postDate={item.postDate}
+                        postID={item.postID}
+                        postIsPinned={item.postIsPinned}
+                        postTag={item.postTag}
+                        postTitle={item.postTitle}
+                        postType={postType}
+                        postURL={item.postURL} />
+                )
+            })
+        }</>
+    )
+}
+
+const PinnedPostListContainer = (props : any) => {
+    
+}
 
 const PostListContainer = styled.div`
     width: 1000px;
