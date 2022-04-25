@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const PostListItem = (props : any) => {
     const [postDate, setDate] = useState<string>("");
     const [postIsPinned, setIsPinned] = useState<string>("");
+    const [postLink, setLink] = useState<string>("");
     const [postTag, setTag] = useState<Array<string>>([]);
     const [postTitle, setTitle] = useState<string>("");
     const [postType, setType] = useState<string>("");
@@ -13,14 +14,15 @@ const PostListItem = (props : any) => {
     useEffect(() => {
         setDate(props.postDate);
         setIsPinned(props.postIsPinned);
+        setLink(`/postview/${props.postType}/${props.postID}`);
         setTag(props.postTag);
         setTitle(props.postTitle);
         setType(props.postType);
-        setURL(`/postview/${props.postType}/${props.postID}`);
+        setURL(props.postURL);
     }, []);
 
     return(
-        <Link to={postURL}>
+        <Link to={postLink}>
             <PostItemContainer>
                 <PostItemImageContainer>
                     <PostItemImage />
