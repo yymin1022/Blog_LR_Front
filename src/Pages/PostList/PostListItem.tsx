@@ -24,7 +24,7 @@ const PostListItem = (props : any) => {
         setURL(props.postURL);
 
         API.getPostImage(props.postURL as string, props.postType as string, "thumb.png").then((apiResult : any) => {
-            setThumb(apiResult["ImageData"]);
+            setThumb(`data:image/;base64,${apiResult["ImageData"]}`);
         });
     }, []);
 
