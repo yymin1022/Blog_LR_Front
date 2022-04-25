@@ -27,7 +27,8 @@ const PostList = () => {
                             postIsPinned={item.postIsPinned}
                             postTag={item.postTag}
                             postTitle={item.postTitle}
-                            postType={postType} />
+                            postType={postType}
+                            postURL={item.postURL} />
                     )
                 })
             }
