@@ -19,21 +19,22 @@ const PostList = () => {
 
     return (
         <PostListContainer>
-            <PinnedPostListContainer postList={postList} postType={postType} />
+            <PostListItemContainer isPinned={true} postList={postList} postType={postType} />
             <PostDivider />
-            <NormalPostListContainer postList={postList} postType={postType} />
+            <PostListItemContainer isPinned={false} postList={postList} postType={postType} />
         </PostListContainer>
     );
 };
 
-const NormalPostListContainer = (props : any) => {
+const PostListItemContainer = (props : any) => {
+    const isPinned = props.isPinned;
     const postList = props.postList;
     const postType = props.postType;
 
     return (
         <>{
             postList.map((item : any) => {
-                if(!item.postIsPinned){
+                if(item.postIsPinned == isPinned){
                     return(
                         <PostListItem
                             postDate={item.postDate}
@@ -49,31 +50,6 @@ const NormalPostListContainer = (props : any) => {
         }</>
     )
 }
-
-const PinnedPostListContainer = (props : any) => {
-    const postList = props.postList;
-    const postType = props.postType;
-
-    return (
-        <>{
-            postList.map((item : any) => {
-                if(item.postIsPinned){
-                    return(
-                        <PostListItem
-                            postDate={item.postDate}
-                            postID={item.postID}
-                            postIsPinned={item.postIsPinned}
-                            postTag={item.postTag}
-                            postTitle={item.postTitle}
-                            postType={postType}
-                            postURL={item.postURL} />
-                    )
-                }
-            })
-        }</>
-    )
-}
-
 const PostListContainer = styled.div`
     width: 1000px;
 
