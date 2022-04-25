@@ -41,8 +41,7 @@ export const getPostData = (postID : string, postType : string) => {
         postType: postType
     };
 
-    let apiResult : any = apiRequest(apiURL, apiReqData);
-    return apiResult;
+    return apiRequest(apiURL, apiReqData);
 };
 
 export const getPostImage = (postID : string, postType : string, srcID : string) => {
@@ -53,8 +52,7 @@ export const getPostImage = (postID : string, postType : string, srcID : string)
         srcID: srcID
     };
 
-    let apiResult : any = apiRequest(apiURL, apiReqData);
-    return apiResult;
+    return apiRequest(apiURL, apiReqData);
 };
 
 export const getPostList = (postType : string) => {
@@ -63,6 +61,5 @@ export const getPostList = (postType : string) => {
         postType: postType
     };
 
-    let apiResult : any = apiRequest(apiURL, apiReqData);
-    return apiResult;
+    return apiRequest(apiURL, apiReqData);
 };
