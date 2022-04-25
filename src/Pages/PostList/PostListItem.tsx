@@ -16,7 +16,7 @@ const PostListItem = (props : any) => {
         setTag(props.postTag);
         setTitle(props.postTitle);
         setType(props.postType);
-        setURL(`/postview/${props.postType}/${props.postURL}`);
+        setURL(`/postview/${props.postType}/${props.postID}`);
     }, []);
 
     return(
