@@ -9,6 +9,8 @@ const apiRequest = (apiURL : string, apiReqData : object) => {
             let apiResultData = apiResult["RESULT_DATA"];
             let apiResultMsg = apiResult["RESULT_MSG"];
 
+            console.log(apiResult);
+
             if(apiResultCode != 200){
                 console.log(apiResult);
                 console.log(apiResultMsg);
