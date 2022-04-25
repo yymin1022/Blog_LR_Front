@@ -22,7 +22,12 @@ const PostList = () => {
                 postList.map((item : any) => {
                     return(
                         <PostListItem
-                            postTitle={item.postTitle} />
+                            postDate={item.postDate}
+                            postID={item.postID}
+                            postIsPinned={item.postIsPinned}
+                            postTag={item.postTag}
+                            postTitle={item.postTitle}
+                            postURL={item.postURL} />
                     )
                 })
             }
