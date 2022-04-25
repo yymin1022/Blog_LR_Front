@@ -49,7 +49,27 @@ const NormalPostListContainer = (props : any) => {
 }
 
 const PinnedPostListContainer = (props : any) => {
-    
+    const postList = props.postList;
+    const postType = props.postType;
+
+    return (
+        <>{
+            postList.map((item : any) => {
+                if(item.postIsPinned){
+                    return(
+                        <PostListItem
+                            postDate={item.postDate}
+                            postID={item.postID}
+                            postIsPinned={item.postIsPinned}
+                            postTag={item.postTag}
+                            postTitle={item.postTitle}
+                            postType={postType}
+                            postURL={item.postURL} />
+                    )
+                }
+            })
+        }</>
+    )
 }
 
 const PostListContainer = styled.div`
