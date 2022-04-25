@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import * as API from "../../Common/Utils/API";
+
 const PostListItem = (props : any) => {
     const [postDate, setDate] = useState<string>("");
     const [postIsPinned, setIsPinned] = useState<string>("");
     const [postLink, setLink] = useState<string>("");
     const [postTag, setTag] = useState<Array<string>>([]);
+    const [postThumb, setmb] = useState<any>();
     const [postTitle, setTitle] = useState<string>("");
     const [postType, setType] = useState<string>("");
     const [postURL, setURL] = useState<string>("");
@@ -19,6 +22,10 @@ const PostListItem = (props : any) => {
         setTitle(props.postTitle);
         setType(props.postType);
         setURL(props.postURL);
+
+        API.getPostImage(postURL as string, postType as string, "thumb.png").then((apiResult : any) => {
+            console.log(apiResult);
+        });
     }, []);
 
     return(
