@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import PostListItem from "./PostListItem";
 import * as API from "../../Common/Utils/API";
 
 const PostList = () => {
@@ -20,7 +21,8 @@ const PostList = () => {
             {
                 postList.map((item : any) => {
                     return(
-                        <p>{item["postTitle"]}</p>
+                        <PostListItem
+                            postTitle={item.postTitle} />
                     )
                 })
             }

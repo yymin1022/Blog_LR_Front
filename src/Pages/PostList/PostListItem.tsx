@@ -1,10 +1,8 @@
 import React from "react";
 
-const PostListItem = (props) => {
+const PostListItem = (props : any) => {
     return(
-        <>
-            {props.postTitle}
-        </>
+        <p>{props.postTitle}</p>
     )
 }
 
