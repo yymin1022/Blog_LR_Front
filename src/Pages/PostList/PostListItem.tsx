@@ -9,7 +9,7 @@ const PostListItem = (props : any) => {
     const [postIsPinned, setIsPinned] = useState<string>("");
     const [postLink, setLink] = useState<string>("");
     const [postTag, setTag] = useState<Array<string>>([]);
-    const [postThumb, setThumb] = useState<any>();
+    const [postThumb, setThumb] = useState<string>("");
     const [postTitle, setTitle] = useState<string>("");
     const [postType, setType] = useState<string>("");
     const [postURL, setURL] = useState<string>("");
