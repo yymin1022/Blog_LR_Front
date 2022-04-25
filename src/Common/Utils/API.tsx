@@ -53,6 +53,8 @@ export const getPostImage = (postID : string, postType : string, srcID : string)
         srcID: srcID
     };
 
+    console.log(apiReqData);
+
     let apiResult : any = apiRequest(apiURL, apiReqData);
     return apiResult["ImageData"];
 };
