@@ -9,7 +9,7 @@ const PostListItem = (props : any) => {
     const [postIsPinned, setIsPinned] = useState<string>("");
     const [postLink, setLink] = useState<string>("");
     const [postTag, setTag] = useState<Array<string>>([]);
-    const [postThumb, setmb] = useState<any>();
+    const [postThumb, setThumb] = useState<any>();
     const [postTitle, setTitle] = useState<string>("");
     const [postType, setType] = useState<string>("");
     const [postURL, setURL] = useState<string>("");
@@ -24,7 +24,7 @@ const PostListItem = (props : any) => {
         setURL(props.postURL);
 
         API.getPostImage(props.postURL as string, props.postType as string, "thumb.png").then((apiResult : any) => {
-            console.log(apiResult);
+            setThumb(apiResult["ImageData"]);
         });
     }, []);
 
@@ -32,7 +32,7 @@ const PostListItem = (props : any) => {
         <Link to={postLink}>
             <PostItemContainer>
                 <PostItemImageContainer>
-                    <PostItemImage />
+                    <PostItemImage src={postThumb}/>
                 </PostItemImageContainer>
 
                 <PostItemTextContainer>
