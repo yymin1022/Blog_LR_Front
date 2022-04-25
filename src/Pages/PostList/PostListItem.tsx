@@ -49,7 +49,7 @@ const PostItemContainer = styled.div`
     height: 450px;
     width: 300px;
 
-    margin: 0px 0px 30px 0px;
+    margin: 15px 0px 15px 0px;
 
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     transition: box-shadow 0.3s ease-in-out;
@@ -62,7 +62,7 @@ const PostItemContainer = styled.div`
         height: 150px;
         width: 350px;
     
-        margin: 0px 0px 30px 0px;
+        margin: 15px 0px 15px 0px;
     
         display: flex;
         flex-direction: row;
