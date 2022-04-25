@@ -19,6 +19,8 @@ const PostList = () => {
 
     return (
         <PostListContainer>
+            <PinnedPostListContainer postList={postList} postType={postType} />
+            <PostDivider />
             <NormalPostListContainer postList={postList} postType={postType} />
         </PostListContainer>
     );
@@ -79,6 +81,18 @@ const PostListContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+`;
+
+const PostDivider = styled.hr`
+    width: 990px;
+
+    border: 0;
+    background-color: #CCCCCC;
+    height: 1px;
+
+    @media screen and (max-width: 1400px){
+        width: 100%;
+    }
 `;
 
 export default PostList;
