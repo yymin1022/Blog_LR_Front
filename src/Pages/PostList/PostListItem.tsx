@@ -14,7 +14,7 @@ const PostListItem = (props : any) => {
         setDate(props.postDate);
         setIsPinned(props.postIsPinned);
         setTag(props.postTag);
-        setTitle(props.posttitle);
+        setTitle(props.postTitle);
         setType(props.postType);
         setURL(`/postview/${props.postType}/${props.postID}`);
     }, []);
