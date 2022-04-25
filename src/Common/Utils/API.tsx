@@ -9,8 +9,6 @@ const apiRequest = (apiURL : string, apiReqData : object) => {
             let apiResultData = apiResult["RESULT_DATA"];
             let apiResultMsg = apiResult["RESULT_MSG"];
 
-            console.log(apiResult);
-
             if(apiResultCode != 200){
                 console.log(apiResult);
                 console.log(apiResultMsg);
@@ -55,10 +53,8 @@ export const getPostImage = (postID : string, postType : string, srcID : string)
         srcID: srcID
     };
 
-    console.log(apiReqData);
-
     let apiResult : any = apiRequest(apiURL, apiReqData);
-    return apiResult["ImageData"];
+    return apiResult;
 };
 
 export const getPostList = (postType : string) => {
