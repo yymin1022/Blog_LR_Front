@@ -26,6 +26,27 @@ const PostList = () => {
     );
 };
 
+const PostDivider = styled.hr`
+    width: 990px;
+
+    border: 0;
+    background-color: #CCCCCC;
+    height: 1px;
+
+    @media screen and (max-width: 1400px){
+        width: 100%;
+    }
+`;
+
+const PostListContainer = styled.div`
+    width: 1000px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+`;
+
 const PostListItemContainer = (props : any) => {
     const isPinned = props.isPinned;
     const postList = props.postList;
@@ -50,25 +71,5 @@ const PostListItemContainer = (props : any) => {
         }</>
     )
 }
-const PostListContainer = styled.div`
-    width: 1000px;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-`;
-
-const PostDivider = styled.hr`
-    width: 990px;
-
-    border: 0;
-    background-color: #CCCCCC;
-    height: 1px;
-
-    @media screen and (max-width: 1400px){
-        width: 100%;
-    }
-`;
 
 export default PostList;
