@@ -31,16 +31,18 @@ const NormalPostListContainer = (props : any) => {
     return (
         <>{
             postList.map((item : any) => {
-                return(
-                    <PostListItem
-                        postDate={item.postDate}
-                        postID={item.postID}
-                        postIsPinned={item.postIsPinned}
-                        postTag={item.postTag}
-                        postTitle={item.postTitle}
-                        postType={postType}
-                        postURL={item.postURL} />
-                )
+                if(!item.postIsPinned){
+                    return(
+                        <PostListItem
+                            postDate={item.postDate}
+                            postID={item.postID}
+                            postIsPinned={item.postIsPinned}
+                            postTag={item.postTag}
+                            postTitle={item.postTitle}
+                            postType={postType}
+                            postURL={item.postURL} />
+                    )
+                }
             })
         }</>
     )
