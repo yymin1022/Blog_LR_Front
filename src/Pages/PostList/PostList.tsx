@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import { useParams } from "react-router-dom";
 
 import PostListItem from "./PostListItem";
@@ -17,7 +18,7 @@ const PostList = () => {
     }, []);
 
     return (
-        <div>
+        <PostListContainer>
             {
                 postList.map((item : any) => {
                     return(
@@ -32,8 +33,17 @@ const PostList = () => {
                     )
                 })
             }
-        </div>
+        </PostListContainer>
     );
 };
+
+const PostListContainer = styled.div`
+    width: 1000px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+`;
 
 export default PostList;
