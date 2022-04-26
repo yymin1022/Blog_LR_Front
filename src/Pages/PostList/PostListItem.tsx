@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 import * as API from "../../Common/Utils/API";
 
 const PostListItem = (props : any) => {
     const [postDate, setDate] = useState<string>("");
-    const [postIsPinned, setIsPinned] = useState<string>("");
+    const [postIsPinned, setIsPinned] = useState<boolean>(false);
     const [postLink, setLink] = useState<string>("");
     const [postTag, setTag] = useState<Array<string>>([]);
     const [postThumb, setThumb] = useState<string>("");
@@ -30,12 +30,12 @@ const PostListItem = (props : any) => {
 
     return(
         <Link to={postLink}>
-            <PostItemContainer>
-                <PostItemImageContainer>
-                    <PostItemImage src={postThumb}/>
+            <PostItemContainer isPinned={postIsPinned}>
+                <PostItemImageContainer isPinned={postIsPinned}>
+                    <PostItemImage src={postThumb} isPinned={postIsPinned}/>
                 </PostItemImageContainer>
 
-                <PostItemTextContainer>
+                <PostItemTextContainer isPinned={postIsPinned}>
                     <PostItemTextTitle>{postTitle}</PostItemTextTitle>
                     <PostItemTextDate>{postDate}</PostItemTextDate>
                     <PostItemTextTag>{`#${postTag[0]}`}</PostItemTextTag>
@@ -45,7 +45,7 @@ const PostListItem = (props : any) => {
     )
 }
 
-const PostItemContainer = styled.div`
+const PostItemContainer = styled.div<{isPinned : boolean}>`
     height: 450px;
     width: 300px;
 
@@ -53,6 +53,17 @@ const PostItemContainer = styled.div`
 
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     transition: box-shadow 0.3s ease-in-out;
+
+    ${(props) =>
+        props.isPinned &&
+        css`
+            height: 150px;
+            width: 450px;
+
+            display: flex;
+            flex-direction: row;
+        `
+    }
 
     &:hover{
         box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -72,14 +83,30 @@ const PostItemContainer = styled.div`
     }
 `;
 
-const PostItemImage = styled.img`
+const PostItemImage = styled.img<{isPinned : boolean}>`
     height: 100%;
     width: 100%;
+
+    ${(props) =>
+        props.isPinned &&
+        css`
+            height: 100%;
+            width: 100%;
+        `
+    }
 `;
 
-const PostItemImageContainer = styled.div`
+const PostItemImageContainer = styled.div<{isPinned : boolean}>`
     height: 300px;
     width: 300px;
+
+    ${(props) =>
+        props.isPinned &&
+        css`
+            height: 150px;
+            width: 150px;
+        `
+    }
 
     @media screen and (max-width: 1400px){
         height: 150px;
@@ -133,7 +160,7 @@ const PostItemTextTitle = styled.p`
     }
 `;
 
-const PostItemTextContainer = styled.div`
+const PostItemTextContainer = styled.div<{isPinned : boolean}>`
     height: 150px;
     width: 300px;
 
@@ -146,6 +173,17 @@ const PostItemTextContainer = styled.div`
         margin-right: 10px;
     
         text-align: left;
+    }
+
+    ${(props) =>
+        props.isPinned &&
+        css`
+            height: 150px;
+            width: 300px;
+        
+            padding-left: 10px;
+            padding-right: 10px;
+        `
     }
 
     @media screen and (max-width: 1400px){
