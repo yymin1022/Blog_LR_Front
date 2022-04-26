@@ -88,13 +88,16 @@ const PageContainer = styled.div`
     height: 100%;
     width: 100%;
 
+    display: flex;
+    justify-content: center;
+
     margin-top: 150px;
     margin-left: 350px;
 
     @media screen and (max-width: 1400px){
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 200px;
+        margin-left: 00px;
+        margin-right: 0px;
+        margin-top: 100px;
     }
 `;
 

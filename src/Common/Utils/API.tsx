@@ -1,35 +1,37 @@
 import axios from "axios";
 
-const API_URL_BASE : string = process.env.apiURL as string;
+const API_URL_BASE : string = process.env.REACT_APP_API_URL as string;
 
 const apiRequest = (apiURL : string, apiReqData : object) => {
-    let apiResult : any = sendRequest(apiURL, apiReqData);
-    let apiResultCode : number = apiResult["RESULT_CODE"] as number;
-    let apiResultData : object = apiResult["RESULT_DATA"] as object;
-    let apiResultMsg : string = apiResult["RESULT_MSG"] as string;
+    return new Promise((resolve) => {
+        sendRequest(apiURL, apiReqData).then((apiResult : any) => {
+            let apiResultCode = apiResult["RESULT_CODE"];
+            let apiResultData = apiResult["RESULT_DATA"];
+            let apiResultMsg = apiResult["RESULT_MSG"];
 
-    if(apiResultCode != 200){
-        console.log(apiResultMsg);
-    }
+            if(apiResultCode != 200){
+                console.log(apiResult);
+                console.log(apiResultMsg);
+            }
 
-    return(apiResultData);
+            resolve(apiResultData);
+        });
+    })
 };
 
 const sendRequest = (url : string, data : object) => {
-    let resultData : object = {};
-
-    axios.post(url, data)
-    .then((response) => {
-        resultData = response.data;
-    })
-    .catch((error) => {
-        resultData = {
-            RESULT_CODE: 100,
-            RESULT_MSG: error as string
-        };
+    return new Promise((resolve) => {
+        axios.post(url, data)
+        .then((response) => {
+            resolve(response.data);
+        })
+        .catch((error) => {
+            resolve({
+                RESULT_CODE: 100,
+                RESULT_MSG: error as string
+            });
+        });
     });
-
-    return resultData;
 }
 
 export const getPostData = (postID : string, postType : string) => {
@@ -39,8 +41,7 @@ export const getPostData = (postID : string, postType : string) => {
         postType: postType
     };
 
-    let apiResult : object = apiRequest(apiURL, apiReqData);
-    return apiResult;
+    return apiRequest(apiURL, apiReqData);
 };
 
 export const getPostImage = (postID : string, postType : string, srcID : string) => {
@@ -51,8 +52,7 @@ export const getPostImage = (postID : string, postType : string, srcID : string)
         srcID: srcID
     };
 
-    let apiResult : any = apiRequest(apiURL, apiReqData);
-    return apiResult["ImageData"];
+    return apiRequest(apiURL, apiReqData);
 };
 
 export const getPostList = (postType : string) => {
@@ -61,6 +61,5 @@ export const getPostList = (postType : string) => {
         postType: postType
     };
 
-    let apiResult : object = apiRequest(apiURL, apiReqData);
-    return apiResult;
+    return apiRequest(apiURL, apiReqData);
 };
