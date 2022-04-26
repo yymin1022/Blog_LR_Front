@@ -86,14 +86,6 @@ const PostItemContainer = styled.div<{isPinned : boolean}>`
 const PostItemImage = styled.img<{isPinned : boolean}>`
     height: 100%;
     width: 100%;
-
-    ${(props) =>
-        props.isPinned &&
-        css`
-            height: 100%;
-            width: 100%;
-        `
-    }
 `;
 
 const PostItemImageContainer = styled.div<{isPinned : boolean}>`
@@ -192,10 +184,6 @@ const PostItemTextContainer = styled.div<{isPinned : boolean}>`
     
         padding-left: 10px;
         padding-right: 10px;
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
     }
 `;
 
