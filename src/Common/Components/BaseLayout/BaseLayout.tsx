@@ -95,9 +95,9 @@ const PageContainer = styled.div`
     margin-left: 350px;
 
     @media screen and (max-width: 1400px){
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 200px;
+        margin-left: 00px;
+        margin-right: 0px;
+        margin-top: 100px;
     }
 `;
 
