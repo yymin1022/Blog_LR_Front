@@ -45,6 +45,10 @@ const PostListContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media screen and (max-width: 1400px){
+        justify-content: center;
+    }
 `;
 
 const PostListItemContainer = (props : any) => {
