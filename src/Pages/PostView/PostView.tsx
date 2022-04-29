@@ -25,7 +25,11 @@ const PostView = () => {
 
     return (
         <div>
-            PostView
+            <p>{postDate}</p>
+            <p>{postTag}</p>
+            <p>{postTitle}</p>
+            <p>{postURL}</p>
+            <p>{postContent}</p>
         </div>
     );
 };
