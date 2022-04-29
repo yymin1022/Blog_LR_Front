@@ -14,6 +14,8 @@ const apiRequest = (apiURL : string, apiReqData : object) => {
                 console.log(apiResultMsg);
             }
 
+            console.log(apiResultData);
+
             resolve(apiResultData);
         });
     })
