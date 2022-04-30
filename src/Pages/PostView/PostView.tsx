@@ -10,7 +10,7 @@ const PostView = () => {
 
     const [postContent, setContent] = useState<string>();
     const [postDate, setDate] = useState<string>();
-    const [postTag, setTag] = useState<string>();
+    const [postTag, setTag] = useState<Array<string>>();
     const [postTitle, setTitle] = useState<string>();
     const [postURL, setURL] = useState<string>();
 
@@ -27,7 +27,15 @@ const PostView = () => {
     return (
         <PostContainer>
             <PostDataContainer>
-                PostData
+                <PostDataTitleContainer>
+                    <h2>{postTitle}</h2>
+                </PostDataTitleContainer>
+
+                <PostDataAuthorDateContainer>
+                    <p>written by LR</p>
+                    <p>|</p>
+                    <p>{postDate}</p>
+                </PostDataAuthorDateContainer>
             </PostDataContainer>
 
             <PostDataSeperator />
@@ -72,6 +80,16 @@ const PostDataSeperator = styled.hr`
 
     margin-bottom: 30px;
     margin-top:30px;
+`;
+
+const PostDataAuthorDateContainer = styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: center;
+`;
+
+const PostDataTitleContainer = styled.div`
+
 `;
 
 const PostFooter = styled.div`
