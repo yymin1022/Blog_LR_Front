@@ -83,7 +83,7 @@ const PostContainer = styled.div`
 `;
 
 const PostCommentContainer = styled.div`
-    
+    width: 100%;
 `;
 
 const PostContentContainer = styled.div`
