@@ -63,7 +63,7 @@ const PostView = () => {
             </PostTagContainer>
 
             <PostCommentContainer>
-                PostComment
+                <Utterances />
             </PostCommentContainer>
 
             <PostFooter>
