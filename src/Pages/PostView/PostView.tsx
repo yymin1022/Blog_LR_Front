@@ -48,6 +48,7 @@ const PostView = () => {
             <PostContentContainer>
                 <ReactMarkdown
                     children={postContent}
+                    components={MDRenderer(postID as string, postType as string)}
                     rehypePlugins={[RehypeRaw]}
                     remarkPlugins={[RemarkGFM]} />
             </PostContentContainer>

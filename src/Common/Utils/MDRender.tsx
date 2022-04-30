@@ -6,7 +6,7 @@ import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const MDRenderer = (postID: string, postType: string) => {
     return {
-        a: ({children, href, ...props} : {children : any, href : any}) =>{
+        a: ({children, href, ...props} : {children? : any, href? : any}) =>{
             if(postType !== "About"){
                 return(
                     <a target="_blank" {...props}>
@@ -23,20 +23,20 @@ const MDRenderer = (postID: string, postType: string) => {
             }
         },
         
-        code: ({inline, className, children, ...props} : {children : any, className : any, inline : any}) => {
+        code: ({inline, className, children, ...props} : {children? : any, className? : any, inline? : any}) => {
             const match = /language-(\w+)/.exec(className || '');
             return !inline && match 
                 ? <SyntaxHighlighter style={darcula} language={match[1]} children={String(children).replace(/\n$/, '')} {...props}/>
                 : <code className={className} {...props}/>;
         },
 
-        img: ({src, width, ...props} : {src : any, width : any}) =>
+        img: ({src, width, ...props} : {src? : any, width? : any}) =>
             <img src={require(`../Post/${postType}/${postID}/${src}`)} width={width} {...props} />,
 
-        strong: ({children, ...props} : {children : any}) =>
+        strong: ({children, ...props} : {children? : any}) =>
             <Strong {...props}>{children}</Strong>,
         
-        ul: ({children, ...props} : {children : any}) =>
+        ul: ({children, ...props} : {children? : any}) =>
             <Ul {...props}>{children}</Ul>,
     }
 }
