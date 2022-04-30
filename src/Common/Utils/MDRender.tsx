@@ -33,11 +33,11 @@ const MDRenderer = (postURL: string, postType: string) => {
         },
 
         img: ({src, width, ...props} : {src? : any, width? : any}) => {
+            let imageData = "";
             API.getPostImage(postURL as string, postType as string, src as string).then((apiResult : any) => {
-                return <img src={`data:image/;base64,${apiResult["ImageData"]}`} width={width} {...props} />;
+                imageData = apiResult["ImageData"];
             });
-            
-            
+            return <img src={`data:image/;base64,${imageData}`} width={width} {...props} />;
         },
 
         strong: ({children, ...props} : {children? : any}) =>
