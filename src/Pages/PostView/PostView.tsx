@@ -80,17 +80,23 @@ const PostCommentContainer = styled.div`
 
 const PostContentContainer = styled.div`
     width: 800px;
+
+    @media screen and (max-width: 1400px){
+        width: 100%;
+    }
 `;
 
-const PostDataContainer = styled.div`
-
-`;
+const PostDataContainer = styled.div``;
 
 const PostDataSeperator = styled.hr`
     width: 800px;
 
     margin-bottom: 30px;
     margin-top:30px;
+
+    @media screen and (max-width: 1400px){
+        width: 100%;
+    }
 `;
 
 const PostDataAuthorDateContainer = styled.div`
@@ -103,9 +109,7 @@ const PostDataAuthorDateContainer = styled.div`
     }
 `;
 
-const PostDataTitleContainer = styled.div`
-
-`;
+const PostDataTitleContainer = styled.div``;
 
 const PostFooter = styled.div`
     height: 150px;
