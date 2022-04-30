@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
 
 import * as API from "../../Common/Utils/API";
 
@@ -24,14 +25,58 @@ const PostView = () => {
     }, []);
 
     return (
-        <div>
-            <p>{postDate}</p>
-            <p>{postTag}</p>
-            <p>{postTitle}</p>
-            <p>{postURL}</p>
-            <p>{postContent}</p>
-        </div>
+        <PostContainer>
+            <PostDataContainer>
+                PostData
+            </PostDataContainer>
+
+            <PostDataSeperator />
+
+            <PostContentContainer>
+                PostContent
+            </PostContentContainer>
+
+            <PostTagContainer>
+                PostTag
+            </PostTagContainer>
+
+            <PostCommentContainer>
+                PostComment
+            </PostCommentContainer>
+
+            <PostFooter>
+
+            </PostFooter>
+        </PostContainer>
     );
 };
+
+const PostContainer = styled.div`
+
+`;
+
+const PostCommentContainer = styled.div`
+    
+`;
+
+const PostContentContainer = styled.div`
+    
+`;
+
+const PostDataContainer = styled.div`
+
+`;
+
+const PostDataSeperator = styled.hr`
+
+`;
+
+const PostFooter = styled.div`
+
+`;
+
+const PostTagContainer = styled.div`
+    
+`;
 
 export default PostView;
