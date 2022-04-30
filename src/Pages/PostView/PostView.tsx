@@ -54,13 +54,11 @@ const PostView = () => {
             </PostContentContainer>
 
             <PostTagContainer>
-                {
-                    postTag.map(item => {
-                        return(
-                            <p>{`#${item}`}</p>
-                        )
-                    })
-                }
+                {postTag.map(item => {
+                    return(
+                        <p>{`#${item}`}</p>
+                    )
+                })}
             </PostTagContainer>
 
             <PostCommentContainer>
