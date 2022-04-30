@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-const PostRenderer = (postID: string, postType: string) => {
+const MDRenderer = (postID: string, postType: string) => {
     return {
         a: ({children, href, ...props} : {children : any, href : any}) =>{
             if(postType !== "About"){
