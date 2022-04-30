@@ -7,8 +7,6 @@ import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
 import * as API from "../../Common/Utils/API";
 
 const MDRenderer = (postURL: string, postType: string) => {
-    const [imgData, setImgData] = useState<string>("");
-
     return {
         a: ({children, href, ...props} : {children? : any, href? : any}) =>{
             if(postType !== "About"){
@@ -34,12 +32,8 @@ const MDRenderer = (postURL: string, postType: string) => {
                 : <code className={className} {...props}/>;
         },
 
-        img: ({src, width, ...props} : {src? : any, width? : any}) => {
-            API.getPostImage(postURL as string, postType as string, src as string).then((apiResult : any) => {
-                setImgData(`data:image/;base64,${apiResult["ImageData"]}`);
-            });
-            return <img src={imgData} width={width} {...props} />;
-        },
+        img: ({src, width, ...props} : {src? : any, width? : any}) =>
+            <ImageView src={src} postType={postType} postURL={postURL} width={width}/>,
 
         strong: ({children, ...props} : {children? : any}) =>
             <Strong {...props}>{children}</Strong>,
@@ -50,6 +44,18 @@ const MDRenderer = (postURL: string, postType: string) => {
 }
 
 export default MDRenderer;
+
+const ImageView = ({src, postType, postURL, width, ...props} : {src : any, postType : any, postURL : any, width : any}) => {
+    const [imgData, setImgData] = useState<string>("");
+
+    API.getPostImage(postURL as string, postType as string, src as string).then((apiResult : any) => {
+        setImgData(`data:image/;base64,${apiResult["ImageData"]}`);
+    });
+
+    return(
+        <img src={imgData} width={width} {...props} />
+    );
+}
 
 const A = styled.a`
     color: #164EAB;
