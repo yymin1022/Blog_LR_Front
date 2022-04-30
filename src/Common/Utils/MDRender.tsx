@@ -1,18 +1,18 @@
-import React from "react"; 
+import React, { Component } from "react"; 
 import styled from "styled-components";
 
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-const PostRenderer = (postID, postType) => {
+const PostRenderer = (postID: string, postType: string) => {
     return {
-        a: ({children, ...props}) =>{
+        a: ({children, href, ...props} : {children : any, href : any}) =>{
             if(postType !== "About"){
                 return(
                     <a target="_blank" {...props}>
                         <AContainer>
                             <p className="postLinkTitle">{children}</p>
-                            <p className="postLinkURL">{props.href}</p>
+                            <p className="postLinkURL">{href}</p>
                         </AContainer>
                     </a>
                 )
@@ -23,20 +23,20 @@ const PostRenderer = (postID, postType) => {
             }
         },
         
-        code: ({inline, className, children, ...props}) => {
+        code: ({inline, className, children, ...props} : {children : any, className : any, inline : any}) => {
             const match = /language-(\w+)/.exec(className || '');
             return !inline && match 
                 ? <SyntaxHighlighter style={darcula} language={match[1]} children={String(children).replace(/\n$/, '')} {...props}/>
                 : <code className={className} {...props}/>;
         },
 
-        img: ({src, width, ...props}) =>
+        img: ({src, width, ...props} : {src : any, width : any}) =>
             <img src={require(`../Post/${postType}/${postID}/${src}`)} width={width} {...props} />,
 
-        strong: ({children, ...props}) =>
+        strong: ({children, ...props} : {children : any}) =>
             <Strong {...props}>{children}</Strong>,
         
-        ul: ({children, ...props}) =>
+        ul: ({children, ...props} : {children : any}) =>
             <Ul {...props}>{children}</Ul>,
     }
 }
