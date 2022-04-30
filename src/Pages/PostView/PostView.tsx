@@ -61,6 +61,9 @@ const PostView = () => {
 
 const PostContainer = styled.div`
     width: 100%;
+
+    display: flex;
+    justify-content: center;
 `;
 
 const PostCommentContainer = styled.div`
