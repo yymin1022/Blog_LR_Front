@@ -10,7 +10,7 @@ const PostView = () => {
 
     const [postContent, setContent] = useState<string>();
     const [postDate, setDate] = useState<string>();
-    const [postTag, setTag] = useState<Array<string>>();
+    const [postTag, setTag] = useState<Array<string>>([]);
     const [postTitle, setTitle] = useState<string>();
     const [postURL, setURL] = useState<string>();
 
@@ -45,7 +45,13 @@ const PostView = () => {
             </PostContentContainer>
 
             <PostTagContainer>
-                PostTag
+                {
+                    postTag.map(item => {
+                        return(
+                            <p>{`#${item}`}</p>
+                        )
+                    })
+                }
             </PostTagContainer>
 
             <PostCommentContainer>
