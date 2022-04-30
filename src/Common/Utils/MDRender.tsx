@@ -7,6 +7,8 @@ import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
 import * as API from "../../Common/Utils/API";
 
 const MDRenderer = (postURL: string, postType: string) => {
+    const [imgData, setImgData] = useState<string>("");
+
     return {
         a: ({children, href, ...props} : {children? : any, href? : any}) =>{
             if(postType !== "About"){
@@ -33,11 +35,10 @@ const MDRenderer = (postURL: string, postType: string) => {
         },
 
         img: ({src, width, ...props} : {src? : any, width? : any}) => {
-            let imageData = "";
             API.getPostImage(postURL as string, postType as string, src as string).then((apiResult : any) => {
-                imageData = apiResult["ImageData"];
+                setImgData(`data:image/;base64,${apiResult["ImageData"]}`);
             });
-            return <img src={`data:image/;base64,${imageData}`} width={width} {...props} />;
+            return <img src={imgData} width={width} {...props} />;
         },
 
         strong: ({children, ...props} : {children? : any}) =>
