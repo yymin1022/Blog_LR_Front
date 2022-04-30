@@ -1,4 +1,4 @@
-import React, { Component } from "react"; 
+import React, { Component, useState } from "react"; 
 import styled from "styled-components";
 
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
@@ -32,8 +32,14 @@ const MDRenderer = (postURL: string, postType: string) => {
                 : <code className={className} {...props}/>;
         },
 
-        img: ({src, width, ...props} : {src? : any, width? : any}) =>
-            <img src={`data:image/jpeg;base64,${API.getPostImage(postURL, postType, src)["ImageData"]}`} width={width} {...props} />,
+        img: ({src, width, ...props} : {src? : any, width? : any}) => {
+            const [imgSrc, setImgSrc] = useState<string>("");
+            API.getPostImage(postURL as string, postType as string, src as string).then((apiResult : any) => {
+                setImgSrc(`data:image/;base64,${apiResult["ImageData"]}`);
+            });
+            
+            return <img src={imgSrc} width={width} {...props} />;
+        },
 
         strong: ({children, ...props} : {children? : any}) =>
             <Strong {...props}>{children}</Strong>,
