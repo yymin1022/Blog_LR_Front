@@ -33,8 +33,7 @@ const MDRenderer = (postID: string, postType: string) => {
         },
 
         img: ({src, width, ...props} : {src? : any, width? : any}) =>
-            console.log(API.getPostImage(postID, postType, src)),
-            // <img src={require(`../Post/${postType}/${postID}/${src}`)} width={width} {...props} />,
+            <img src={`data:image/jpeg;base64,${API.getPostImage(postID, postType, src)}`} width={width} {...props} />,
 
         strong: ({children, ...props} : {children? : any}) =>
             <Strong {...props}>{children}</Strong>,
