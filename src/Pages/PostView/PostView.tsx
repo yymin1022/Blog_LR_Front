@@ -86,6 +86,10 @@ const PostDataAuthorDateContainer = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
+
+    p{
+        margin: 5px;
+    }
 `;
 
 const PostDataTitleContainer = styled.div`
