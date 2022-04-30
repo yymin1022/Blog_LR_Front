@@ -52,7 +52,7 @@ const PostView = () => {
 };
 
 const PostContainer = styled.div`
-
+    width: 100%;
 `;
 
 const PostCommentContainer = styled.div`
@@ -60,7 +60,7 @@ const PostCommentContainer = styled.div`
 `;
 
 const PostContentContainer = styled.div`
-    
+    width: 800px;
 `;
 
 const PostDataContainer = styled.div`
@@ -68,15 +68,33 @@ const PostDataContainer = styled.div`
 `;
 
 const PostDataSeperator = styled.hr`
+    width: 800px;
 
+    margin-bottom: 30px;
+    margin-top:30px;
 `;
 
 const PostFooter = styled.div`
+    height: 150px;
+    width: 100%;
 
+    align-items: center;
+    display: flex;
+    justify-content: center;
 `;
 
 const PostTagContainer = styled.div`
-    
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    p{
+        color: #777777;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 `;
 
 export default PostView;
