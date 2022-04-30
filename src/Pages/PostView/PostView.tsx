@@ -14,9 +14,6 @@ const PostView = () => {
     const [postURL, setURL] = useState<string>();
 
     useEffect(() => {
-        console.log("postID : " + postID);
-        console.log("postType : " + postType);
-
         API.getPostData(postID as string, postType as string).then((apiResult : any) => {
             setContent(apiResult["PostContent"]);
             setDate(apiResult["PostDate"]);
