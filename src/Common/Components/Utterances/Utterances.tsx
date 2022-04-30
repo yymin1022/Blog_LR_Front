@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
 const Utterances = () => {
-    const utterancesRef = useRef<HTMLDivElement>();
+    const utterancesRef = useRef<HTMLDivElement>() as React.MutableRefObject<HTMLDivElement>;
 
     useEffect(() => {
         const utterances = document.createElement("script");

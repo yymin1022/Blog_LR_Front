@@ -8,6 +8,7 @@ import RemarkGFM from "remark-gfm";
 
 import * as API from "../../Common/Utils/API";
 import MDRenderer from "../../Common/Utils/MDRender";
+import Utterances from "../../Common/Components/Utterances";
 
 const PostView = () => {
     const {postID} = useParams<{postID : string}>();
