@@ -30,8 +30,8 @@ const MDRenderer = (postID: string, postType: string) => {
                 : <code className={className} {...props}/>;
         },
 
-        img: ({src, width, ...props} : {src? : any, width? : any}) =>
-            <img src={require(`../Post/${postType}/${postID}/${src}`)} width={width} {...props} />,
+        // img: ({src, width, ...props} : {src? : any, width? : any}) =>
+            // <img src={} width={width} {...props} />,
 
         strong: ({children, ...props} : {children? : any}) =>
             <Strong {...props}>{children}</Strong>,
