@@ -4,6 +4,8 @@ import styled from "styled-components";
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
+import * as API from "../../Common/Utils/API";
+
 const MDRenderer = (postID: string, postType: string) => {
     return {
         a: ({children, href, ...props} : {children? : any, href? : any}) =>{
@@ -30,8 +32,9 @@ const MDRenderer = (postID: string, postType: string) => {
                 : <code className={className} {...props}/>;
         },
 
-        // img: ({src, width, ...props} : {src? : any, width? : any}) =>
-            // <img src={} width={width} {...props} />,
+        img: ({src, width, ...props} : {src? : any, width? : any}) =>
+            console.log(API.getPostImage(postID, postType, src)),
+            // <img src={require(`../Post/${postType}/${postID}/${src}`)} width={width} {...props} />,
 
         strong: ({children, ...props} : {children? : any}) =>
             <Strong {...props}>{children}</Strong>,
