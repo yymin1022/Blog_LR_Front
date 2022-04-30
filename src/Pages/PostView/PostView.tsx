@@ -7,6 +7,7 @@ import RehypeRaw from "rehype-raw";
 import RemarkGFM from "remark-gfm";
 
 import * as API from "../../Common/Utils/API";
+import MDRenderer from "../../Common/Utils/MDRender";
 
 const PostView = () => {
     const {postID} = useParams<{postID : string}>();
