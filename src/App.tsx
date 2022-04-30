@@ -13,7 +13,7 @@ const App = () => {
 			<Route element={<BaseLayout/>}>
 				<Route path="/" element={<Home/>} />
 				<Route path="/postlist/:postType" element={<PostList/>} />
-				<Route path="/postview/:posttype/:postID" element={<PostView/>} />
+				<Route path="/postview/:postType/:postID" element={<PostView/>} />
 			</Route>
 		</Routes>
 	);
