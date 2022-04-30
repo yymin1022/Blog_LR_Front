@@ -41,7 +41,7 @@ const MDRenderer = (postID: string, postType: string) => {
     }
 }
 
-export default PostRenderer;
+export default MDRenderer;
 
 const A = styled.a`
     color: #164EAB;
