@@ -8,6 +8,7 @@ import RemarkGFM from "remark-gfm";
 
 import * as API from "../../Common/Utils/API";
 import MDRenderer from "../../Common/Utils/MDRender";
+import Utterances from "../../Common/Components/Utterances";
 
 const PostView = () => {
     const {postID} = useParams<{postID : string}>();
@@ -62,7 +63,7 @@ const PostView = () => {
             </PostTagContainer>
 
             <PostCommentContainer>
-                PostComment
+                <Utterances />
             </PostCommentContainer>
 
             <PostFooter>
@@ -82,7 +83,7 @@ const PostContainer = styled.div`
 `;
 
 const PostCommentContainer = styled.div`
-    
+    width: 100%;
 `;
 
 const PostContentContainer = styled.div`
