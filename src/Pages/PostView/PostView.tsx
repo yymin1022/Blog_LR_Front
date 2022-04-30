@@ -12,11 +12,11 @@ const PostView = () => {
     const {postID} = useParams<{postID : string}>();
     const {postType} = useParams<{postType : string}>();
 
-    const [postContent, setContent] = useState<string>();
-    const [postDate, setDate] = useState<string>();
+    const [postContent, setContent] = useState<string>("");
+    const [postDate, setDate] = useState<string>("");
     const [postTag, setTag] = useState<Array<string>>([]);
-    const [postTitle, setTitle] = useState<string>();
-    const [postURL, setURL] = useState<string>();
+    const [postTitle, setTitle] = useState<string>("");
+    const [postURL, setURL] = useState<string>("");
 
     useEffect(() => {
         API.getPostData(postID as string, postType as string).then((apiResult : any) => {
@@ -45,7 +45,10 @@ const PostView = () => {
             <PostDataSeperator />
 
             <PostContentContainer>
-                PostContent
+                <ReactMarkdown
+                    children={postContent}
+                    rehypePlugins={[RehypeRaw]}
+                    remarkPlugins={[RemarkGFM]} />
             </PostContentContainer>
 
             <PostTagContainer>
@@ -84,6 +87,10 @@ const PostCommentContainer = styled.div`
 
 const PostContentContainer = styled.div`
     width: 800px;
+
+    font-family: "NanumSquare";
+    line-height: 25px;
+    text-align: center;
 
     @media screen and (max-width: 1400px){
         width: 100%;
