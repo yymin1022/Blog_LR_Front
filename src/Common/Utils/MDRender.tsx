@@ -1,8 +1,8 @@
-import React, { Component, useState } from "react"; 
+import React, { useState } from "react"; 
 import styled from "styled-components";
 
-import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
-import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import * as API from "../../Common/Utils/API";
 
@@ -33,7 +33,7 @@ const MDRenderer = (postURL: string, postType: string) => {
         },
 
         img: ({src, width, ...props} : {src? : any, width? : any}) =>
-            <ImageView src={src} postType={postType} postURL={postURL} width={width}/>,
+            <ImageView src={src} postType={postType} postURL={postURL} width={width} {...props} />,
 
         strong: ({children, ...props} : {children? : any}) =>
             <Strong {...props}>{children}</Strong>,
@@ -52,9 +52,7 @@ const ImageView = ({src, postType, postURL, width, ...props} : {src : any, postT
         setImgData(`data:image/;base64,${apiResult["ImageData"]}`);
     });
 
-    return(
-        <img src={imgData} width={width} {...props} />
-    );
+    return <img src={imgData} width={width} {...props} />;
 }
 
 const A = styled.a`
