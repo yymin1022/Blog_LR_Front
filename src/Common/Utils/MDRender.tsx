@@ -11,7 +11,7 @@ const MDRenderer = (postURL: string, postType: string) => {
         a: ({children, href, ...props} : {children? : any, href? : any}) =>{
             if(postType !== "about"){
                 return(
-                    <a target="_blank" {...props}>
+                    <a target="_blank" href={href} {...props}>
                         <AContainer>
                             <p className="postLinkTitle">{children}</p>
                             <p className="postLinkURL">{href}</p>
@@ -20,7 +20,7 @@ const MDRenderer = (postURL: string, postType: string) => {
                 )
             }else{
                 return(
-                    <A target="_blank" {...props}>{children}</A>
+                    <A target="_blank" href={href} {...props}>{children}</A>
                 )
             }
         },
