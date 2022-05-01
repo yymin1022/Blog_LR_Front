@@ -9,7 +9,7 @@ import * as API from "../../Common/Utils/API";
 const MDRenderer = (postURL: string, postType: string) => {
     return {
         a: ({children, href, ...props} : {children? : any, href? : any}) =>{
-            if(postType !== "About"){
+            if(postType !== "about"){
                 return(
                     <a target="_blank" {...props}>
                         <AContainer>
