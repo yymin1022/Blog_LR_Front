@@ -11,8 +11,8 @@ import MDRenderer from "../../Common/Utils/MDRender";
 import Utterances from "../../Common/Components/Utterances";
 
 const PostView = () => {
+    const {postID} = useParams<{postID : string}>();
     const {postType} = useParams<{postType : string}>();
-    const {postID} = postType != "about" ? useParams<{postID : string}>() : {postID : "LR"};
 
     const [postContent, setContent] = useState<string>("");
     const [postDate, setDate] = useState<string>("");
