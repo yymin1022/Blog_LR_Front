@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-import * as API from "../../Common/Utils/API";
+import * as API from "./API";
 
 const MDRenderer = (postURL: string, postType: string) => {
     return {
