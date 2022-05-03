@@ -52,25 +52,30 @@ const HomeNavContainer = styled.div`
 
 const HomeNavItem = (props : any) => {
     let btnString : string = "";
+    let btnTo : string = "";
     let postType : string = props.postType as string;
 
     switch(postType){
         case "blog":
             btnString = "Blog";
+            btnTo = "/postlist/blog";
             break;
         case "project":
             btnString = "Project";
+            btnTo = "/postlist/project";
             break;
         case "solving":
             btnString = "Problem Solving";
+            btnTo = "/postlist/solving";
             break;
         case "about":
             btnString = "About";
+            btnTo = "/postview/about/LR";
             break;
     }
 
     return (
-        <Link to={`/postlist/${postType}`}>
+        <Link to={btnTo}>
             <p>{btnString}</p>
         </Link>
     )
