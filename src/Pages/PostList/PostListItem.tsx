@@ -23,7 +23,16 @@ const PostListItem = (props : any) => {
         setType(props.postType);
         setURL(props.postURL);
 
-        API.getPostImage(props.postURL as string, props.postType as string, "thumb.png").then((apiResult : any) => {
+        let thumbFile = "thumb.png";
+        if(props.postType == "solving"){
+            if(props.postIsPinned){
+                thumbFile = "thumb_boj.png";
+            }else{
+                thumbFile = "thumb_programmers.png";
+            }
+        }
+
+        API.getPostImage(props.postURL as string, props.postType as string, thumbFile).then((apiResult : any) => {
             setThumb(`data:image/;base64,${apiResult["ImageData"]}`);
         });
     }, []);
