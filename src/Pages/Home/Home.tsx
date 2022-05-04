@@ -17,6 +17,8 @@ const Home = () => {
 };
 
 const HomeContainer = styled.div`
+    width: 100%;
+
     margin-left: 100px;
 
     @media screen and (max-width: 1400px){
