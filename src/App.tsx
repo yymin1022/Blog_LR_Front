@@ -14,7 +14,7 @@ const App = () => {
 				<Route path="/" element={<Home/>} />
 				<Route path="/postlist/:postType" element={<PostList/>} />
 				<Route path="/postview/:postType/:postID" element={<PostView/>} />
-				<Route path="*" element={} />
+				<Route path="*" element={<Home/>} />
 			</Route>
 		</Routes>
 	);
