@@ -5,10 +5,10 @@ const Error = () => {
     return (
         <ErrorContainer>
             <ErrorTitleContainer>
-
+                <ErrorTitleItem />
             </ErrorTitleContainer>
             <ErrorNavContainer>
-                
+                <ErrorNavItem />
             </ErrorNavContainer>
         </ErrorContainer>
     );
@@ -32,6 +32,14 @@ const ErrorNavContainer = styled.div`
     }
 `;
 
+const ErrorNavItem = () => {
+    return(
+        <>
+            Error Nav
+        </>
+    )
+};
+
 const ErrorTitleContainer = styled.div`
     margin: 10px;
 
@@ -39,5 +47,13 @@ const ErrorTitleContainer = styled.div`
         margin: 10px;
     }
 `;
+
+const ErrorTitleItem = () => {
+    return(
+        <>
+            Error Title
+        </>
+    )
+};
 
 export default Error;
