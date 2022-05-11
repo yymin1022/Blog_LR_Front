@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 const Error = () => {
     return (
@@ -27,6 +28,14 @@ const ErrorContainer = styled.div`
 const ErrorNavContainer = styled.div`
     margin: 10px;
 
+    p{
+        margin: 10px;
+
+        color: black;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
     @media screen and (max-width: 1400px){
         margin: 10px;
     }
@@ -34,9 +43,9 @@ const ErrorNavContainer = styled.div`
 
 const ErrorNavItem = () => {
     return(
-        <>
-            Error Nav
-        </>
+        <Link to={"/"}>
+            <p>Go Home</p>
+        </Link>
     )
 };
 
