@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 const Error = () => {
@@ -52,6 +52,11 @@ const ErrorNavItem = () => {
 const ErrorTitleContainer = styled.div`
     margin: 10px;
 
+    p{
+        color: rgb(22, 78, 171);
+        font-size: 60px;
+    }
+
     @media screen and (max-width: 1400px){
         margin: 10px;
     }
@@ -60,9 +65,27 @@ const ErrorTitleContainer = styled.div`
 const ErrorTitleItem = () => {
     return(
         <>
-            <p>잘못된 접근입니다.</p>
+            <ErrorTitleText accent={true}>앗!</ErrorTitleText>
+            <ErrorTitleText accent={false}>잘못된 접근입니다.</ErrorTitleText>
         </>
     )
 };
+
+const ErrorTitleText = styled.p<{accent : boolean}>`
+    font-size: 60px;
+    margin: 0px;
+
+    ${(props) =>
+        props.accent &&
+        css`
+            color: #164EAB;
+            font-weight: bold;
+        `
+    }
+
+    @media screen and (max-width: 1400px){
+        font-size: 30px;
+    }
+`;
 
 export default Error;
