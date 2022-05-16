@@ -52,11 +52,6 @@ const ErrorNavItem = () => {
 const ErrorTitleContainer = styled.div`
     margin: 10px;
 
-    p{
-        color: rgb(22, 78, 171);
-        font-size: 60px;
-    }
-
     @media screen and (max-width: 1400px){
         margin: 10px;
     }
