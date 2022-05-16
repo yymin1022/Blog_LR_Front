@@ -44,7 +44,7 @@ const ErrorNavContainer = styled.div`
 const ErrorNavItem = () => {
     return(
         <Link to={"/"}>
-            <p>홈으로 이동</p>
+            <p>블로그 홈으로 돌아가기</p>
         </Link>
     )
 };
