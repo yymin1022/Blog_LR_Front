@@ -60,7 +60,7 @@ const ErrorTitleContainer = styled.div`
 const ErrorTitleItem = () => {
     return(
         <>
-            Error Title
+            <p>잘못된 접근입니다.</p>
         </>
     )
 };
