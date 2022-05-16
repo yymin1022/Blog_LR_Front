@@ -26,7 +26,7 @@ const ErrorContainer = styled.div`
 `;
 
 const ErrorNavContainer = styled.div`
-    margin: 10px;
+    margin: 60px 10px;
 
     p{
         margin: 10px;
@@ -44,7 +44,7 @@ const ErrorNavContainer = styled.div`
 const ErrorNavItem = () => {
     return(
         <Link to={"/"}>
-            <p>Go Home</p>
+            <p>홈으로 이동</p>
         </Link>
     )
 };
