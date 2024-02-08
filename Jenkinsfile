@@ -5,8 +5,8 @@ pipeline {
         stage("Setup Build Environment") {
             steps {
                 script {
-                    TELEGRAM_BOT_ID = "telegram-botid-yymin1022"
-                    TELEGRAM_CHAT_ID = "telegram-chatid-yymin1022"
+                    TELEGRAM_BOT_ID = credentials("telegram-botid-yymin1022")
+                    TELEGRAM_CHAT_ID = credentials("telegram-chatid-yymin1022")
 
                     CURRENT_BUILD_NUMBER = "${currentBuild.number}"
                     GIT_MESSAGE = sh(returnStdout: true, script: "git log -n 1 --format=%s ${GIT_COMMIT}").trim()
