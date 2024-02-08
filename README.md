@@ -1,6 +1,6 @@
 ﻿# 1인개발자 LR의 IT블로그
 
-# Currently Refactoring Ongoing with [Next.JS](https://github.com/yymin1022/Blog_LR)
+### Currently Refactoring Ongoing with [Next.JS](https://github.com/yymin1022/Blog_LR)
 
 [블로그 방문](https://dev-lr.com)
 
